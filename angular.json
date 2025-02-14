@@ -28,14 +28,18 @@
               {
                 "glob": "**/*",
                 "input": "public/assets"
+              },
+              {
+                "glob": "404.html",
+                "input": "src",
+                "output": "/"
               }
-
             ],
             "styles": [
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/gurdwara-website/"
+            "baseHref": "/tample-webapp/"
           },
           "configurations": {
             "production": {

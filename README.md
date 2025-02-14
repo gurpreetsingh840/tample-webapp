@@ -19,7 +19,7 @@ A modern, responsive website for Gurdwara Singh Sabha built with Angular and Tai
 ## Development
 ```bash
 # Clone the repository
-git clone https://github.com/gurpreetsingh840/gurdwara-website.git
+git clone https://github.com/gurpreetsingh840/tample-webapp.git
 
 # Install dependencies
 npm install
@@ -37,4 +37,4 @@ ng build
 ```
 
 ## Live Demo
-Visit: https://gurpreetsingh840.github.io/gurdwara-website/
+Visit: https://gurpreetsingh840.github.io/tample-webapp/

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gurdwara Singh Sabha</title>
+    <script>
+      const path = window.location.pathname;
+      const base = '/tample-webapp/';
+      localStorage.setItem('path', path.substring(base.length));
+      window.location.href = base;
+    </script>
+  </head>
+  <body>
+  </body>
+</html> 
