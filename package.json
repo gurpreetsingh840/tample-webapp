@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postbuild": "rm -rf docs/index.html docs/404.html && cp -r docs/browser/* docs/ && rm -rf docs/browser && cp docs/index.html docs/404.html",
-    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages\" && git push"
+    "postbuild": "node scripts/postbuild.js",
+    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages - $(date '+%Y-%m-%d %H:%M:%S')\" && git push"
   },
   "private": true,
   "dependencies": {

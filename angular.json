@@ -24,6 +24,21 @@
               "src/favicon.ico",
               "src/assets",
               {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "khanda.png",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "version.json",
+                "input": "src",
+                "output": "/"
+              },
+              {
                 "glob": "404.html",
                 "input": "src",
                 "output": "/"
