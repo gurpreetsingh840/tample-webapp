@@ -3,14 +3,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
+@layer base {
+  :root {
+    --bg-color: theme('colors.background.light');
+    --text-color: theme('colors.text.primary.light');
+  }
+
+  .dark {
+    --bg-color: theme('colors.background.dark');
+    --text-color: theme('colors.text.primary.dark');
+  }
 }
 
-.dark {
-  --bg-color: #2d2d2d; /* Slightly lighter dark background */
-  --text-color: #e0e0e0; /* Slightly lighter text color */
+@layer components {
+  /* Layout */
+  .page-container {
+    @apply container mx-auto px-4 py-8;
+  }
+
+  .section {
+    @apply py-12;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-background-card-light dark:bg-background-card-dark rounded-xl shadow-lg;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-r from-primary-500/85 to-primary-400;
+  }
+
+  /* Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-bold text-text-primary-light dark:text-text-primary-dark;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-bold text-text-primary-light dark:text-text-primary-dark;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-semibold text-text-primary-light dark:text-text-primary-dark;
+  }
+
+  .text-body {
+    @apply text-text-secondary-light dark:text-text-secondary-dark;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 hover:bg-primary-600 text-white;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white;
+  }
+
+  /* Links */
+  .link {
+    @apply transition-colors duration-200;
+  }
+
+  .link-primary {
+    @apply link text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-500;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400;
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600/90 to-primary-500/90;
+  }
 }
 
 body {
@@ -25,4 +96,69 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* Base styles and common utility classes */
+
+/* Card styles */
+.card-header {
+  @apply bg-gradient-to-r from-orange-500/85 to-orange-400 px-6 py-4 flex items-center;
+}
+
+.card-header-icon {
+  @apply bg-white/10 rounded-full p-2 mr-3;
+}
+
+.card-header-icon svg {
+  @apply h-6 w-6 text-white/90;
+}
+
+.card-header-title {
+  @apply text-2xl font-bold text-white/95;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+/* Section styles */
+.section-hero {
+  @apply bg-gradient-to-r from-orange-600/90 to-orange-500/90 text-white py-16;
+}
+
+.section-container {
+  @apply container mx-auto px-4;
+}
+
+/* Text styles */
+.text-primary {
+  @apply text-gray-800 dark:text-white;
+}
+
+.text-secondary {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+/* Link styles */
+.link-primary {
+  @apply text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-200;
+}
+
+/* Grid layouts */
+.grid-2-cols {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.grid-3-cols {
+  @apply grid md:grid-cols-3 gap-6;
+}
+
+/* List styles */
+.list-item {
+  @apply flex items-center space-x-2 text-secondary;
 }
