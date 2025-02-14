@@ -56,6 +56,6 @@ export class ContactInfoComponent {
   @Input() containerClass = '';
   @Input() textClass = 'mb-2 text-gray-600 dark:text-gray-300';
   @Input() directionsClass = 'inline-flex items-center text-orange-500 hover:text-orange-400 transition-colors duration-200';
-
+  
   constructor(public contactInfo: ContactInfoService) {}
 } 
