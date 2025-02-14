@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postbuild": "node scripts/postbuild.js",
-    "deploy": "npm run build && git add . && git commit -m \"Deploy to GitHub Pages - $(date '+%Y-%m-%d %H:%M:%S')\" && git push"
+    "deploy": "node scripts/deploy.js"
   },
   "private": true,
   "dependencies": {
