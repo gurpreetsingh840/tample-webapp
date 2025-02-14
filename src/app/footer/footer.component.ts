@@ -5,11 +5,18 @@ import { Component } from '@angular/core';
   selector: 'app-footer',
   standalone: true,
   template: `
-    <footer class="bg-gray-800 text-white p-4 mt-auto">
+    <footer class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 mt-auto">
       <div class="container mx-auto text-center">
-        <p>&copy; 2025 My App. All rights reserved.</p>
+        &copy; {{ currentYear }} Gurdwara Sahib. All rights reserved.
       </div>
     </footer>
-  `
+  `,
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
-export class FooterComponent {}
+export class FooterComponent {
+  currentYear: number = new Date().getFullYear();
+}
