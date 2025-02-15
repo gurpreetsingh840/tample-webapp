@@ -317,15 +317,13 @@ import { ActivatedRoute } from '@angular/router';
             <div class="space-y-2 text-gray-600 dark:text-gray-300">
               <p>
                 <i class="fa-solid fa-phone mr-2"></i>
-                <a [href]="'tel:' + contactInfo.phone" 
-                   class="hover:text-orange-600 dark:hover:text-orange-400">
+                <a [href]="'tel:' + contactInfo.phone" class="link-base">
                   {{ contactInfo.phone }}
                 </a>
               </p>
               <p>
                 <i class="fa-solid fa-envelope mr-2"></i>
-                <a [href]="'mailto:' + contactInfo.email" 
-                   class="hover:text-orange-600 dark:hover:text-orange-400">
+                <a [href]="'mailto:' + contactInfo.email" class="link-base">
                   {{ contactInfo.email }}
                 </a>
               </p>

@@ -20,9 +20,7 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
         <div class="card mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
           <div class="card-gradient p-6 flex items-center">
             <div class="bg-white/10 rounded-full p-2 mr-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <i class="fa-solid fa-address-card text-white/90 text-xl"></i>
             </div>
             <h2 class="heading-2 text-white">Contact Information</h2>
           </div>
@@ -56,9 +54,7 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
                   <div class="ml-4">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-1">Phone</h3>
                     <a [href]="'tel:' + contactInfo.phone" 
-                       class="inline-flex items-center text-orange-600 hover:text-orange-700 
-                              dark:text-orange-400 dark:hover:text-orange-500 
-                              transition-colors duration-200">
+                       class="link-base">
                       <span class="border-b border-current">{{ contactInfo.phone }}</span>
                       <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
@@ -74,9 +70,7 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
                   <div class="ml-4">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-1">Email</h3>
                     <a [href]="'mailto:' + contactInfo.email" 
-                       class="inline-flex items-center text-orange-600 hover:text-orange-700
-                              dark:text-orange-400 dark:hover:text-orange-500
-                              transition-colors duration-200">
+                       class="link-base">
                       <span class="border-b border-current">{{ contactInfo.email }}</span>
                       <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
