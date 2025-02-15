@@ -2,7 +2,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router, Event, NavigationEnd } from '@angular/router';
-import { ContactInfoComponent } from '../shared/components/contact-info/contact-info.component';
+import { ContactInfoComponent } from '../../shared/components/contact-info/contact-info.component';
 import { filter } from 'rxjs/operators';
 
 interface MenuItem {
@@ -21,7 +21,8 @@ interface MenuItem {
     RouterLinkActive,
     ContactInfoComponent
   ],
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   @Input() darkMode: boolean = false;
