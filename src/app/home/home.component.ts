@@ -60,10 +60,16 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
       <div class="container mx-auto px-4">
         <h2 class="heading-2 text-center mb-12">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Service Cards -->
+          
+          <!-- Weekly Programs -->
           <div class="card p-8 hover:shadow-lg transition">
             <div class="flex flex-col h-full">
-              <h3 class="heading-3 mb-4">Weekly Programs</h3>
+              <div class="flex items-center mb-4">
+                <div class="p-3 bg-orange-100 dark:bg-gray-600 rounded-full mr-4">
+                  <i class="fa-solid fa-calendar-days text-orange-600 dark:text-orange-400 text-xl"></i>
+                </div>
+                <h3 class="heading-3">Weekly Programs</h3>
+              </div>
               <p class="text-body mb-6 flex-grow">
                 Join us for our weekly Sunday Deewan services from 9:00 AM to 2:00 PM. 
                 Experience spiritual enlightenment through Kirtan, Katha, and Langar Seva. 
@@ -71,7 +77,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
               </p>
               <div class="mt-4">
                 <a routerLink="/services/weekly-programs" class="link-primary inline-flex items-center">
-                  Learn More 
+                  Learn More
                   <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
@@ -80,10 +86,15 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
             </div>
           </div>
 
-          <!-- Service Card 2 -->
+          <!-- Religious Services -->
           <div class="card p-8 hover:shadow-lg transition">
             <div class="flex flex-col h-full">
-              <h3 class="heading-3 mb-4">Religious Services</h3>
+              <div class="flex items-center mb-4">
+                <div class="p-3 bg-orange-100 dark:bg-gray-600 rounded-full mr-4">
+                  <i class="fa-solid fa-book-open text-orange-600 dark:text-orange-400 text-xl"></i>
+                </div>
+                <h3 class="heading-3">Religious Services</h3>
+              </div>
               <p class="text-body mb-6 flex-grow">
                 We offer various religious services including Akhand Path, Sehaj Path, 
                 and Sukhmani Sahib Path. Our Gurdwara provides a peaceful environment 
@@ -92,7 +103,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
               </p>
               <div class="mt-4">
                 <a routerLink="/services/religious-services" class="link-primary inline-flex items-center">
-                  Learn More 
+                  Learn More
                   <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
@@ -101,10 +112,15 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
             </div>
           </div>
 
-          <!-- Service Card 3 -->
+          <!-- Community Services -->
           <div class="card p-8 hover:shadow-lg transition">
             <div class="flex flex-col h-full">
-              <h3 class="heading-3 mb-4">Community Services</h3>
+              <div class="flex items-center mb-4">
+                <div class="p-3 bg-orange-100 dark:bg-gray-600 rounded-full mr-4">
+                  <i class="fa-solid fa-hands-helping text-orange-600 dark:text-orange-400 text-xl"></i>
+                </div>
+                <h3 class="heading-3">Community Services</h3>
+              </div>
               <p class="text-body mb-6 flex-grow">
                 From Khalsa School for children to community events and Langar seva, 
                 we provide various services to strengthen our community bonds. Join us 
@@ -112,7 +128,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
               </p>
               <div class="mt-4">
                 <a routerLink="/services/community-services" class="link-primary inline-flex items-center">
-                  Learn More 
+                  Learn More
                   <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
@@ -120,6 +136,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

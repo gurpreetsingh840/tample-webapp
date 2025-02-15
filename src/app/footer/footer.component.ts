@@ -25,8 +25,8 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
           <div>
             <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
-              <li><a routerLink="/services" class="hover:text-orange-500 transition">Services</a></li>
-              <li><a routerLink="/activities" class="hover:text-orange-500 transition">Activities</a></li>
+              <li><a routerLink="/services/religious-services" class="hover:text-orange-500 transition">Services</a></li>
+              <li><a routerLink="/services/weekly-programs" class="hover:text-orange-500 transition">Activities</a></li>
               <li><a routerLink="/about" class="hover:text-orange-500 transition">About Us</a></li>
               <li><a routerLink="/contact" class="hover:text-orange-500 transition">Contact</a></li>
             </ul>

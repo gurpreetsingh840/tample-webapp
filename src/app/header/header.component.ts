@@ -9,6 +9,7 @@ interface MenuItem {
   path: string;
   label: string;
   icon?: string;  // SVG path
+  children?: MenuItem[];
 }
 
 @Component({
@@ -30,8 +31,18 @@ export class HeaderComponent implements OnInit {
       path: '/',
       label: 'Home'
     },
+    {
+      path: '/services/religious-services',
+      label: 'Services',
+      children: [
+        { path: '/services/religious-services#akhand-path', label: 'Akhand Path' },
+        { path: '/services/religious-services#sehaj-path', label: 'Sehaj Path' },
+        { path: '/services/religious-services#sukhmani-sahib', label: 'Sukhmani Sahib' },
+        { path: '/services/religious-services#anand-karaj', label: 'Anand Karaj' },
+        { path: '/services/religious-services#antim-ardas', label: 'Antim Ardas' }
+      ]
+    },
     { path: '/services/weekly-programs', label: 'Programs' },
-    { path: '/services/religious-services', label: 'Services' },
     { path: '/services/community-services', label: 'Community' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' }
@@ -56,5 +67,28 @@ export class HeaderComponent implements OnInit {
 
   onToggleDarkMode() {
     this.toggleDarkMode.emit();
+  }
+
+  navigateWithFragment(path: string) {
+    const [route, fragment] = path.split('#');
+    this.router.navigate([route], { fragment }).then(() => {
+      this.isMenuOpen = false;
+      
+      if (this.router.url.startsWith(route) && fragment) {
+        setTimeout(() => {
+          const element = document.getElementById(fragment);
+          if (element) {
+            const headerOffset = 80; // Height of fixed header
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    });
   }
 }

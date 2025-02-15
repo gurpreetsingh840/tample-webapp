@@ -9,72 +9,125 @@ import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.c
   template: `
     <app-page-hero
       title="Community Services"
-      description="Strengthen our community through service, education, and cultural programs. Everyone is welcome to participate and contribute."
-      icon="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+      description="Building stronger bonds through service and education. Join us in making a difference in our community."
+      icon="M12 4.354a4 4 0 110 5.292V4.354zM15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
     />
 
-    <div class="container mx-auto px-4 py-12">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold mb-8 dark:text-white">Community Services</h1>
-        
-        <div class="space-y-8">
-          <!-- Khalsa School -->
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 dark:text-white">Khalsa School</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Our Khalsa School provides education in Sikh religion, Punjabi language, 
-              and cultural values to children and young adults. Classes are held weekly 
-              with dedicated volunteer teachers.
-            </p>
-            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-              <li>Punjabi Language Classes</li>
-              <li>Kirtan Classes</li>
-              <li>Sikh History Lessons</li>
-              <li>Gurmat Education</li>
-            </ul>
+    <div class="page-container">
+      <div class="max-w-5xl mx-auto">
+        <!-- Khalsa School -->
+        <div class="card mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+          <div class="card-gradient p-6 flex items-center">
+            <div class="bg-white/10 rounded-full p-2 mr-3">
+              <i class="fa-solid fa-graduation-cap text-white/90 text-xl"></i>
+            </div>
+            <h2 class="heading-2 text-white">Khalsa School</h2>
           </div>
-
-          <!-- Langar Seva -->
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 dark:text-white">Langar Seva</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Langar is the community kitchen where meals are served to all visitors 
-              regardless of faith, religion, or background. This is an essential part 
-              of Sikh practice emphasizing equality and community service.
+          <div class="p-6">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Our Khalsa School provides Punjabi language classes, Kirtan lessons, and religious education for children. 
+              Classes are held every Sunday, helping our youth connect with their heritage and faith.
             </p>
-            <p class="text-gray-600 dark:text-gray-300">
-              Volunteers are always welcome to participate in this seva (selfless service).
-            </p>
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                  <i class="fa-solid fa-book text-orange-600 dark:text-orange-400 mr-2"></i>
+                  Programs Offered
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Punjabi Language Classes
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Kirtan Training
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Religious Education
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                  <i class="fa-solid fa-clock text-orange-600 dark:text-orange-400 mr-2"></i>
+                  Schedule
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Every Sunday
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Morning Sessions
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Age-appropriate Groups
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- Community Events -->
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 dark:text-white">Community Events</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              We regularly organize community events to bring people together and 
-              celebrate our rich cultural heritage:
-            </p>
-            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-              <li>Vaisakhi Celebrations</li>
-              <li>Gurpurab Celebrations</li>
-              <li>Youth Programs</li>
-              <li>Cultural Festivals</li>
-              <li>Community Service Projects</li>
-            </ul>
+        <!-- Langar Seva -->
+        <div class="card mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+          <div class="card-gradient p-6 flex items-center">
+            <div class="bg-white/10 rounded-full p-2 mr-3">
+              <i class="fa-solid fa-utensils text-white/90 text-xl"></i>
+            </div>
+            <h2 class="heading-2 text-white">Langar Seva</h2>
           </div>
-
-          <!-- Support Services -->
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-            <h2 class="text-2xl font-semibold mb-4 dark:text-white">Support Services</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Our Gurdwara provides various support services to the community:
+          <div class="p-6">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Langar is a cornerstone of Sikh tradition, offering free meals to all visitors regardless of faith, 
+              background, or status. Join us in this sacred service of preparing and serving meals to the community.
             </p>
-            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-              <li>Newcomer Support</li>
-              <li>Community Counseling</li>
-              <li>Youth Mentorship</li>
-              <li>Senior Services</li>
-            </ul>
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                  <i class="fa-solid fa-hands-helping text-orange-600 dark:text-orange-400 mr-2"></i>
+                  How to Participate
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Volunteer for Kitchen Service
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Donate Groceries
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Sponsor a Langar
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                  <i class="fa-solid fa-calendar text-orange-600 dark:text-orange-400 mr-2"></i>
+                  Timings
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Daily Service Available
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Special Events
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                    Festivals & Celebrations
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

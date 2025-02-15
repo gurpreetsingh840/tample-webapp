@@ -11,5 +11,10 @@ export const routes: Routes = [
     path: 'services',
     children: SERVICES_ROUTES
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact.component')
+      .then(m => m.ContactComponent)
+  },
   // Add other routes as needed
 ];
