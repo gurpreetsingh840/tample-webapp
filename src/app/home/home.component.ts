@@ -9,9 +9,13 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
   imports: [CommonModule, RouterLink, ContactInfoComponent],
   template: `
     <!-- Hero Section -->
-    <section class="relative h-[65vh] bg-cover bg-center" style="background-image: url('/assets/images/gurdwara-hero.jpg');">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+    <section 
+      class="relative h-[65vh] bg-cover bg-center" 
+      style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
+             url('/assets/golden-temple-dawn.jpg');">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
+      <div class="relative z-10 container mx-auto px-4 h-full flex flex-col 
+                  justify-center items-center text-center">
         <!-- Khanda Symbol -->
         <div class="mb-6">
           <img src="assets/khanda.svg" 
@@ -134,7 +138,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
     </section>
 
     <!-- Contact Section -->
-    <section class="py-16 bg-white dark:bg-gray-900">
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="heading-2 mb-6">Visit Us</h2>
