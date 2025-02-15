@@ -46,6 +46,7 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
                   </div>
                 </div>
 
+                <!-- Contact links section -->
                 <div class="flex items-start">
                   <div class="flex-shrink-0">
                     <div class="p-3 bg-orange-100 dark:bg-gray-700 rounded-full">
@@ -55,8 +56,11 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
                   <div class="ml-4">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-1">Phone</h3>
                     <a [href]="'tel:' + contactInfo.phone" 
-                       class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">
-                      {{ contactInfo.phone }}
+                       class="inline-flex items-center text-orange-600 hover:text-orange-700 
+                              dark:text-orange-400 dark:hover:text-orange-500 
+                              transition-colors duration-200">
+                      <span class="border-b border-current">{{ contactInfo.phone }}</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
                   </div>
                 </div>
@@ -70,8 +74,11 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
                   <div class="ml-4">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-1">Email</h3>
                     <a [href]="'mailto:' + contactInfo.email" 
-                       class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">
-                      {{ contactInfo.email }}
+                       class="inline-flex items-center text-orange-600 hover:text-orange-700
+                              dark:text-orange-400 dark:hover:text-orange-500
+                              transition-colors duration-200">
+                      <span class="border-b border-current">{{ contactInfo.email }}</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
                     </a>
                   </div>
                 </div>

@@ -10,10 +10,5 @@ export const SERVICES_ROUTES: Routes = [
     path: 'religious-services',
     loadComponent: () => import('./religious-services/religious-services.component')
       .then(m => m.ReligiousServicesComponent)
-  },
-  {
-    path: 'community-services',
-    loadComponent: () => import('./community-services/community-services.component')
-      .then(m => m.CommunityServicesComponent)
   }
 ]; 

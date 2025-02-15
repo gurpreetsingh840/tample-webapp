@@ -38,7 +38,6 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
             <ul class="space-y-2">
               <li><a routerLink="/services/weekly-programs" class="hover:text-orange-500 transition">Weekly Programs</a></li>
               <li><a routerLink="/services/religious-services" class="hover:text-orange-500 transition">Religious Services</a></li>
-              <li><a routerLink="/services/community-services" class="hover:text-orange-500 transition">Community Services</a></li>
             </ul>
           </div>
 
@@ -55,10 +54,14 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
         </div>
 
         <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p>&copy; 2024 Gurdwara Singh Sabha Richmond VA. All rights reserved.</p>
+          <p>&copy; {{ currentYear }} Gurdwara Singh Sabha Richmond VA. All rights reserved.</p>
         </div>
       </div>
     </footer>
   `
 })
-export class FooterComponent {}
+export class FooterComponent {
+  get currentYear(): number {
+    return new Date().getFullYear();
+  }
+}

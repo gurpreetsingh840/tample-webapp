@@ -43,7 +43,6 @@ export class HeaderComponent implements OnInit {
       ]
     },
     { path: '/services/weekly-programs', label: 'Programs' },
-    { path: '/services/community-services', label: 'Community' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' }
   ];
