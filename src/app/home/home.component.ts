@@ -12,7 +12,7 @@ import { ContactInfoComponent } from '../shared/components/contact-info/contact-
     <section 
       class="relative h-[65vh] bg-cover bg-center" 
       style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
-             url('/assets/golden-temple-dawn.jpg');">
+             url('assets/golden-temple-dawn.jpg');">
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
       <div class="relative z-10 container mx-auto px-4 h-full flex flex-col 
                   justify-center items-center text-center">
