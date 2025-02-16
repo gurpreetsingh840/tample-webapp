@@ -16,6 +16,7 @@
 }
 
 @layer components {
+
   /* Layout */
   .page-container {
     @apply container mx-auto px-4 py-8;
@@ -85,12 +86,24 @@
 
   /* Link styles */
   .link-base {
-    @apply text-orange-600 border-orange-600 
-           hover:text-orange-700 hover:border-orange-700 
-           dark:text-orange-400 dark:border-orange-400 
-           dark:hover:text-orange-500 dark:hover:border-orange-500 
-           transition-colors duration-200;
+    @apply text-orange-600 border-orange-600 hover:text-orange-700 hover:border-orange-700 dark:text-orange-400 dark:border-orange-400 dark:hover:text-orange-500 dark:hover:border-orange-500 transition-colors duration-200;
   }
+
+  /* Animation */
+  .animate-fadeIn {
+    @apply opacity-0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  /* Additional utility classes can be added here */
 }
 
 body {

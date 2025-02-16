@@ -1,11 +1,37 @@
-<div class="p-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <div *ngFor="let image of images" class="bg-white rounded-lg shadow-md overflow-hidden">
-      <img [src]="image.src" [alt]="image.title" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h2 class="text-lg font-semibold">{{ image.title }}</h2>
-        <p class="text-gray-600">{{ image.description }}</p>
+<app-page-hero title="Image Gallery"
+  description="Explore a collection of beautiful images showcasing our Gurdwara and various events. Click any image for a larger view."
+  icon="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2V5z M3 16l5-5 4 4 6-6 3 3" />
+
+<div class="page-container">
+  <div class="gallery-container">
+
+    <!-- Masonry Grid -->
+    <div class="masonry-grid">
+      <div *ngFor="let image of images; let i = index" class="masonry-item" [ngClass]="{
+             'aspect-[4/3]': i % 3 === 0,
+             'aspect-square': i % 5 === 0,
+             'aspect-[3/4]': i % 7 === 0
+           }" (click)="openLightbox(image)">
+        <img [src]="image.src" alt="Gallery image" class="masonry-image">
       </div>
+    </div>
+  </div>
+  <div *ngIf="selectedImage" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+    (click)="closeLightbox()">
+    <div class="relative bg-white p-8 rounded-lg lightbox-container">
+      <!-- Close Button -->
+      <button class="close-button" (click)="closeLightbox()">
+        <i class="fas fa-close"></i>
+      </button>
+      <!-- Previous Button -->
+      <button class="prev-button" (click)="prevImage($event)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <!-- Next Button - Now Correctly Aligned -->
+      <button class="next-button" (click)="nextImage($event)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <img [src]="selectedImage.src" alt="Selected image" class="lightbox-image">
     </div>
   </div>
 </div>
