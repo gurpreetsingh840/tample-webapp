@@ -128,7 +128,7 @@ body {
 }
 
 .card-header-icon {
-  @apply bg-white/10 rounded-full p-2 mr-3;
+  @apply bg-gray-100/10 rounded-full p-2 mr-3;
 }
 
 .card-header-icon svg {
