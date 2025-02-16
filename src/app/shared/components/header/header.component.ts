@@ -1,9 +1,9 @@
 // src/app/header/header.component.ts
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, Router, Event, NavigationEnd } from '@angular/router';
-import { ContactInfoComponent } from '../../shared/components/contact-info/contact-info.component';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Event, NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ContactInfoComponent } from '../contact-info/contact-info.component';
 
 interface MenuItem {
   path: string;
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
 
   isMenuOpen = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.router.events.pipe(
@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
     const [route, fragment] = path.split('#');
     this.router.navigate([route], { fragment }).then(() => {
       this.isMenuOpen = false;
-      
+
       if (this.router.url.startsWith(route) && fragment) {
         setTimeout(() => {
           const element = document.getElementById(fragment);

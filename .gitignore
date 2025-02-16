@@ -16,7 +16,10 @@
 *.launch
 .settings/
 *.sublime-workspace
+
+# IDE - VSCod
 .vscode/*
+
 
 # Misc
 /.sass-cache

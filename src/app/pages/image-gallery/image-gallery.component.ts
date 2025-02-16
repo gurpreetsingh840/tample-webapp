@@ -9,12 +9,12 @@ export class ImageGalleryComponent implements OnInit {
   images: { src: string, title: string, description: string }[] = [];
 
   ngOnInit(): void {
-    const imagesFolder = 'assets/images/golden-temple';
-    const imageCount = 20;
+    const imagesFolder = 'assets/images';
+    const imageCount = 6;
 
     for (let i = 1; i <= imageCount; i++) {
       this.images.push({
-        src: `${imagesFolder}/image${i}.jpg`,
+        src: `${imagesFolder}/gallery-image-${i}.jpg`,
         title: `Golden Temple Image ${i}`,
         description: `Description for image ${i}`
       });

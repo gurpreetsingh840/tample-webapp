@@ -1,9 +1,9 @@
 // src/app/app.component.ts
-import { Component, HostBinding, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, HostBinding, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './pages/header/header.component';
-import { FooterComponent } from './pages/footer/footer.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 })
 export class AppComponent {
   public darkMode = signal<boolean>(
-    
+
     JSON.parse(window.localStorage.getItem('darkMode') ?? String(window.matchMedia('(prefers-color-scheme: dark)').matches))
   );
 
