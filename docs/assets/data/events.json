@@ -1,0 +1,75 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "name": "Guru Nanak Dev Ji Gurpurab",
+            "date": "2025-04-15",
+            "showDateVariationWarning": true,
+            "description": "Guru Nanak Dev Ji, born in Nankana Sahib on 1469-04-15, is the first Sikh Guru and the founder of Sikhism. His teachings emphasize the oneness of God, the importance of honest living, and selfless service. He traveled extensively, spreading his message of love and equality. His hymns and teachings are enshrined in the Guru Granth Sahib, the Sikh scripture. He established the institution of Langar, a free community kitchen, as a symbol of equality. Guru Nanak Dev Ji's legacy continues to inspire millions worldwide.",
+            "time": "05:00 AM"
+        },
+        {
+            "id": 2,
+            "name": "Guru Nanak Dev Ji Jyoti Jot Divas (Departure)",
+            "date": "2025-09-22",
+            "showDateVariationWarning": true,
+            "description": "Commemorates the day Guru Nanak Dev Ji left his physical body and his spirit merged with the divine on 1539-09-22. This is a significant day of remembrance and reflection for Sikhs."
+        },
+        {
+            "id": 3,
+            "name": "Guru Angad Dev Ji Gurpurab",
+            "date": "2025-03-31",
+            "showDateVariationWarning": true,
+            "description": "Guru Angad Dev Ji, the second Sikh Guru, was born in Matte di Sarai on 1504-03-31. He is best known for formalizing the Gurmukhi script, which is used to write the Punjabi language. This made it easier for Sikhs to read and understand the teachings of the Gurus. He also continued the tradition of Langar, strengthening its role in Sikh community life. Guru Angad Dev Ji's dedication to seva (selfless service) and his contributions to Sikh literature are highly valued."
+        },
+        {
+            "id": 4,
+            "name": "Guru Angad Dev Ji Jyoti Jot Divas (Departure)",
+            "date": "2025-03-29",
+            "showDateVariationWarning": true,
+            "description": "Marks the passing of Guru Angad Dev Ji on 1552-03-29. His contributions to Sikhism, especially the development of Gurmukhi, are remembered on this day."
+        },
+        {
+            "id": 5,
+            "name": "Guru Amar Das Ji Gurpurab",
+            "date": "2025-05-05",
+            "showDateVariationWarning": true,
+            "description": "Guru Amar Das Ji, the third Sikh Guru, was born in Basarke Gillan on 1479-05-05. He strengthened the institution of Langar, making it an integral part of Sikh practice. He emphasized equality and opposed the caste system, welcoming people from all backgrounds to partake in Langar. He also established 22 Manjis (religious districts) to spread Sikh teachings. Guru Amar Das Ji's commitment to social justice and his efforts to consolidate the Sikh community are remembered with reverence."
+        },
+        {
+            "id": 6,
+            "name": "Guru Amar Das Ji Jyoti Jot Divas (Departure)",
+            "date": "2025-09-01",
+            "showDateVariationWarning": true,
+            "description": "This day commemorates the departure of Guru Amar Das Ji on 1574-09-01. His work in solidifying Sikh social structures, like Langar, is remembered."
+        },
+        {
+            "id": 7,
+            "name": "Guru Ram Das Ji Gurpurab",
+            "date": "2025-09-24",
+            "showDateVariationWarning": true,
+            "description": "Guru Ram Das Ji, the fourth Sikh Guru, was born in Chuna Mandi, Lahore on 1534-09-24. He founded the city of Amritsar, which is now the spiritual center of Sikhism. He began the construction of the Harmandir Sahib (Golden Temple), which houses the Guru Granth Sahib. He also contributed significantly to the development of the Sikh faith and its institutions. Guru Ram Das Ji's vision and his organizational skills played a crucial role in shaping the Sikh community."
+        },
+        {
+            "id": 8,
+            "name": "Guru Ram Das Ji Jyoti Jot Divas (Departure)",
+            "date": "2025-09-01",
+            "showDateVariationWarning": true,
+            "description": "Marks the passing of Guru Ram Das Ji on 1581-09-01. His founding of Amritsar and the start of the Golden Temple's construction are commemorated."
+        },
+        {
+            "id": 9,
+            "name": "Guru Arjan Dev Ji Shaheedi Diwas",
+            "date": "2025-04-15",
+            "showDateVariationWarning": true,
+            "description": "Guru Arjan Dev Ji, the fifth Sikh Guru, was born in Goindval on 1563-04-15. He compiled the Adi Granth, which is the primary scripture of Sikhism. It includes the teachings of the Sikh Gurus and saints from other faiths, emphasizing the inclusiveness of Sikh philosophy. He was martyred in Lahore for refusing to renounce his faith, becoming the first Sikh martyr. His sacrifice is remembered as a testament to his unwavering commitment to truth and righteousness."
+        },
+        {
+            "id": 10,
+            "name": "Guru Hargobind Ji Gurpurab",
+            "date": "2025-06-19",
+            "showDateVariationWarning": true,
+            "description": "Guru Hargobind Ji, the sixth Sikh Guru, was born in Wadali, Amritsar on 1595-06-19. He introduced the concept of Miri-Piri, representing spiritual and temporal sovereignty. He built the Akal Takht, a symbol of Sikh political power, and established a Sikh army. He emphasized the importance of both spiritual and martial strength. Guru Hargobind Ji's leadership marked a shift in Sikh history, from a purely spiritual focus to one that also embraced political and military aspects."
+        }
+    ]
+}
