@@ -44,10 +44,12 @@ export class HeaderComponent implements OnInit {
       ]
     },
     { path: '/services/weekly-programs', label: 'Programs' },
+    { path: '/events', label: 'Events' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' }
   ];
+
 
   isMenuOpen = false;
 

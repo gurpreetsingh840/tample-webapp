@@ -5,7 +5,7 @@
 /* Wrapper Around the Entire Gallery */
 /* Gallery Wrapper - Now it Pops! */
 .gallery-container {
-    @apply w-full max-w-[1200px] mx-auto p-6 rounded-xl shadow-lg dark:shadow-gray-800 border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 backdrop-blur-md bg-opacity-90 dark:bg-opacity-80 transition-all duration-500 ease-in-out;
+    @apply w-full max-w-[1200px] mx-auto p-6 rounded-xl shadow-lg dark:shadow-gray-800 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 backdrop-blur-md bg-opacity-90 dark:bg-opacity-80 transition-all duration-500 ease-in-out;
 }
 
 /* Dark Mode Enhancements */
@@ -20,12 +20,12 @@
 
 /* Masonry Items with Depth */
 .masonry-item {
-    @apply mb-4 break-inside-avoid cursor-pointer bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md dark:shadow-gray-900 border border-gray-200 dark:border-gray-700 transition-transform duration-300 ease-in-out;
+    @apply mb-4 break-inside-avoid cursor-pointer bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md dark:shadow-gray-900 border border-gray-200 dark:border-gray-700 transition-transform duration-300 ease-in-out;
 }
 
 /* Subtle Glow on Hover */
 .masonry-item:hover {
-    @apply scale-105 shadow-gray-400 dark:shadow-orange-400;
+    @apply scale-105 shadow-lg dark:shadow-orange-400;
 }
 
 /* Dynamic Heights for True Masonry Effect */
@@ -48,7 +48,7 @@
 
 /* Lightbox */
 .lightbox-container {
-    @apply relative w-[90vw] sm:w-[70vw] md:w-[50vw] max-w-[90vw] sm:max-w-[70vw] md:max-w-[50vw] max-h-[80vh] flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-8 rounded-lg shadow-xl dark:shadow-gray-800;
+    @apply relative w-[90vw] sm:w-[70vw] md:w-[50vw] max-w-[90vw] sm:max-w-[70vw] md:max-w-[50vw] max-h-[80vh] flex items-center justify-center bg-white dark:bg-gray-900 p-8 rounded-lg shadow-xl dark:shadow-gray-800;
 }
 
 /* Close Button */

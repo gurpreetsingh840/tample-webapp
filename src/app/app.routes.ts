@@ -1,6 +1,7 @@
 // src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
+import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImageGalleryComponent } from './pages/image-gallery/image-gallery.component';
 
@@ -8,6 +9,10 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'gallery', component: ImageGalleryComponent },
+  {
+    path: 'events',
+    component: EventsComponent
+  },
   {
     path: 'services',
     children: [

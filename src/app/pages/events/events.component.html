@@ -1,0 +1,57 @@
+<app-page-hero title="Upcoming Events"
+    description="Stay informed about our upcoming events and programs. Join us in celebrating our community and faith."
+    icon="calendar" />
+
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Month Navigation -->
+    <div class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-2 overflow-x-auto hide-scrollbar">
+            <div class="flex space-x-4">
+                <button *ngFor="let month of displayedMonths" (click)="scrollToMonth(month)"
+                    [class.bg-orange-500]="currentMonth === month" [class.text-white]="currentMonth === month" class="px-4 py-2 rounded-full text-sm font-medium transition-all
+                               hover:bg-orange-100 dark:hover:bg-orange-900 whitespace-nowrap
+                               focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    {{ getShortMonth(month) }}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8" #timelineContainer>
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-orange-200 dark:bg-orange-800">
+            </div>
+
+            <!-- Events Timeline -->
+            <div class="space-y-16">
+                <ng-container *ngFor="let month of displayedMonths">
+                    <!-- Month Header -->
+                    <div [id]="'month-' + month.replace(' ', '-')" class="relative flex items-center justify-center">
+                        <h2 class="bg-white dark:bg-gray-900 px-4 py-2 text-xl font-bold text-gray-800 dark:text-white">
+                            {{ month }}
+                        </h2>
+                    </div>
+
+                    <!-- Events for the month -->
+                    <div *ngFor="let event of groupedEvents[month]; let even = even"
+                        class="relative flex items-center justify-between" [class.flex-row-reverse]="even">
+                        <div class="w-5/12"></div>
+                        <span class="px-3 py-1 text-sm font-semibold text-white bg-blue-500 rounded-full">
+                            {{ getFormattedDate(event.date) }}
+                        </span>
+                        <div class="w-5/12 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ event.name }}</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">{{ getFormattedDate(event.date) }}</p>
+                            <p *ngIf="event.showDateVariationWarning" class="text-xs text-orange-500 mt-1">
+                                Note: Date may vary based on the lunar calendar
+                            </p>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">{{ event.description }}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

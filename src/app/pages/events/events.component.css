@@ -1,0 +1,40 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+    .relative {
+        text-align: left !important;
+    }
+
+    .relative>div {
+        margin-left: 3rem !important;
+        padding-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+    /* Fix for the date bubble position on mobile */
+    .absolute.timeline-center {
+        left: 1rem;
+    }
+}
+
+/* Smooth transitions */
+.relative {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for timeline items */
+.relative>div {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
