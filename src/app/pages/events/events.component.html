@@ -36,12 +36,14 @@
 
                     <!-- Events for the month -->
                     <div *ngFor="let event of groupedEvents[month]; let even = even"
-                        class="relative flex items-center justify-between" [class.flex-row-reverse]="even">
-                        <div class="w-5/12"></div>
+                        class="relative flex flex-col md:flex-row items-center justify-between"
+                        [class.md:flex-row-reverse]="even">
+                        <div class="w-full md:w-5/12"></div>
                         <span class="px-3 py-1 text-sm font-semibold text-white bg-blue-500 rounded-full">
                             {{ getFormattedDate(event.date) }}
                         </span>
-                        <div class="w-5/12 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                        <div
+                            class="w-full md:w-5/12 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md mt-4 md:mt-0 text-center md:text-left">
                             <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ event.name }}</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-300">{{ getFormattedDate(event.date) }}</p>
                             <p *ngIf="event.showDateVariationWarning" class="text-xs text-orange-500 mt-1">

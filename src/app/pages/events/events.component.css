@@ -14,18 +14,17 @@
 /* Mobile Responsive Styles */
 @media (max-width: 640px) {
     .relative {
-        text-align: left !important;
+        text-align: center !important;
     }
 
     .relative>div {
-        margin-left: 3rem !important;
         padding-left: 1rem !important;
-        margin-right: 1rem !important;
     }
 
     /* Fix for the date bubble position on mobile */
     .absolute.timeline-center {
-        left: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

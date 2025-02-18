@@ -7,8 +7,7 @@ import { EventData, Events, EventsService } from './events.service';
     selector: 'app-events',
     templateUrl: './events.component.html',
     styleUrls: ['./events.component.css'],
-    imports: [CommonModule, PageHeroComponent],
-    standalone: true
+    imports: [CommonModule, PageHeroComponent]
 })
 export class EventsComponent implements OnInit, AfterViewInit {
     @ViewChild('timelineContainer') timelineContainer!: ElementRef;
@@ -77,19 +76,15 @@ export class EventsComponent implements OnInit, AfterViewInit {
     scrollToMonth(month: string) {
         const element = document.getElementById(`month-${month.replace(' ', '-')}`);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const headerOffset = 100; // Adjust this value based on your header height
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         }
-    }
-
-    // New methods for enhancements
-    toggleDescription(event: EventData) {
-        event.showFullDescription = !event.showFullDescription;
-    }
-
-    truncateDescription(description: string, maxLength: number = 150): string {
-        return description.length > maxLength
-            ? description.substring(0, maxLength) + '...'
-            : description;
     }
 }
 

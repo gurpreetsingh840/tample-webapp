@@ -70,6 +70,41 @@
             "date": "2025-06-19",
             "showDateVariationWarning": true,
             "description": "Guru Hargobind Ji, the sixth Sikh Guru, was born in Wadali, Amritsar on 1595-06-19. He introduced the concept of Miri-Piri, representing spiritual and temporal sovereignty. He built the Akal Takht, a symbol of Sikh political power, and established a Sikh army. He emphasized the importance of both spiritual and martial strength. Guru Hargobind Ji's leadership marked a shift in Sikh history, from a purely spiritual focus to one that also embraced political and military aspects."
+        },
+        {
+            "id": 11,
+            "name": "Guru Tegh Bahadur Ji Gurpurab",
+            "date": "2025-04-01",
+            "showDateVariationWarning": true,
+            "description": "Guru Tegh Bahadur Ji, the ninth Sikh Guru, was born in Amritsar on 1621-04-01. He is remembered for his sacrifice to protect religious freedom. He was martyred in Delhi for standing up against forced conversions."
+        },
+        {
+            "id": 12,
+            "name": "Guru Gobind Singh Ji Gurpurab",
+            "date": "2025-01-05",
+            "showDateVariationWarning": true,
+            "description": "Guru Gobind Singh Ji, the tenth Sikh Guru, was born in Patna Sahib on 1666-01-05. He founded the Khalsa in 1699, a significant event in Sikh history. He was a warrior, poet, and philosopher, and his teachings continue to inspire Sikhs worldwide."
+        },
+        {
+            "id": 13,
+            "name": "Guru Har Rai Ji Gurpurab",
+            "date": "2025-01-16",
+            "showDateVariationWarning": true,
+            "description": "Guru Har Rai Ji, the seventh Sikh Guru, was born in Kiratpur Sahib on 1630-01-16. He is remembered for his compassion and efforts to preserve the environment. He established hospitals and herbal gardens, emphasizing the importance of health and nature."
+        },
+        {
+            "id": 14,
+            "name": "Guru Har Rai Ji Jyoti Jot Divas (Departure)",
+            "date": "2025-02-20",
+            "showDateVariationWarning": true,
+            "description": "Marks the passing of Guru Har Rai Ji on 1661-02-20. His contributions to Sikhism, especially in the fields of medicine and environmental preservation, are remembered on this day."
+        },
+        {
+            "id": 15,
+            "name": "Guru Ravidas Ji Gurpurab",
+            "date": "2025-02-24",
+            "showDateVariationWarning": true,
+            "description": "Guru Ravidas Ji, a revered saint and poet, was born in Varanasi on 1377-02-24. His teachings focus on equality, unity, and devotion to God. His hymns are included in the Guru Granth Sahib, guiding Sikhs towards a just and inclusive society."
         }
     ]
 }
