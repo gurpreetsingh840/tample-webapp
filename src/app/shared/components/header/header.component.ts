@@ -36,11 +36,11 @@ export class HeaderComponent implements OnInit {
       path: '/services/religious-services',
       label: 'Services',
       children: [
-        { path: '/services/religious-services#akhand-path', label: 'Akhand Path' },
-        { path: '/services/religious-services#sehaj-path', label: 'Sehaj Path' },
-        { path: '/services/religious-services#sukhmani-sahib', label: 'Sukhmani Sahib' },
-        { path: '/services/religious-services#anand-karaj', label: 'Anand Karaj' },
-        { path: '/services/religious-services#antim-ardas', label: 'Antim Ardas' }
+        { path: '/services/akhand-path', label: 'Akhand Path' },
+        { path: '/services/sehaj-path', label: 'Sehaj Path' },
+        { path: '/services/sukhmani-sahib', label: 'Sukhmani Sahib' },
+        { path: '/services/anand-karaj', label: 'Anand Karaj' },
+        { path: '/services/antim-ardas-ceremony', label: 'Antim Ardas' }
       ]
     },
     { path: '/services/weekly-programs', label: 'Programs' },

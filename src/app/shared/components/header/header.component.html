@@ -22,8 +22,8 @@
               class="absolute bottom-1.5 left-4 right-4 h-0.5 bg-orange-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
           </a>
 
-          <button *ngIf="item.children" (click)="navigateWithFragment(item.path)" class="group px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 
-                         flex items-center relative">
+          <button *ngIf="item.children" [routerLink]="item.path" class="group px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 
+                       flex items-center relative">
             {{ item.label }}
             <i class="fa-solid fa-chevron-down ml-1 text-sm"></i>
             <span

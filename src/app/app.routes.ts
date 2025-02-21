@@ -25,7 +25,27 @@ export const routes: Routes = [
         path: 'religious-services',
         loadComponent: () => import('./pages/religious-services/religious-services.component')
           .then(m => m.ReligiousServicesComponent)
-      }
+      },
+      {
+        path: 'akhand-path', loadComponent: () => import('./pages/akhand-path/akhand-path.component')
+          .then(m => m.AkhandPathComponent)
+      },
+      {
+        path: 'sehaj-path', loadComponent: () => import('./pages/sehaj-path/sehaj-path.component')
+          .then(m => m.SehajPathComponent)
+      },
+      {
+        path: 'sukhmani-sahib', loadComponent: () => import('./pages/sukhmani-sahib/sukhmani-sahib.component')
+          .then(m => m.SukhmaniSahibComponent)
+      },
+      {
+        path: 'anand-karaj', loadComponent: () => import('./pages/anand-karaj/anand-karaj.component')
+          .then(m => m.AnandKarajComponent)
+      },
+      {
+        path: 'antim-ardas-ceremony', loadComponent: () => import('./pages/antim-ardas-ceremony/antim-ardas-ceremony.component')
+          .then(m => m.AntimArdasCeremonyComponent)
+      },
     ]
   },
   {
