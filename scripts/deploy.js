@@ -38,7 +38,7 @@ try {
   // Git commands
   console.log('🚀 Deploying to GitHub Pages...');
   execSync('git add .', { stdio: 'inherit' });
-  execSync(`git commit -m "Deploy v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
+  execSync(`git commit -m "Deploy GitHub v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
   execSync('git push', { stdio: 'inherit' });
 
   console.log(`✨ Version ${newVersion} deployed successfully!`);

@@ -66,7 +66,7 @@ async function deployToFirebase() {
         // Git commands
         console.log('📝 Committing changes...');
         execSync('git add .', { stdio: 'inherit' });
-        execSync(`git commit -m "Deploy v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
+        execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
         execSync('git push', { stdio: 'inherit' });
 
         console.log(`✨ Version ${newVersion} deployed successfully!`);
