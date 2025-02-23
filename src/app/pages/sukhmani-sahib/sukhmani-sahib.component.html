@@ -62,27 +62,88 @@
                     </div>
                 </div>
 
-                <!-- Enhanced Information Cards -->
-                <div class="mt-8 gap-6">
+                <!-- Updated Service Information Section -->
+                <div class="mt-8 grid sm:grid-cols-2 gap-6">
                     <div class="card-list-container">
-                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center">
-                            <i class="fa-solid fa-clock text-orange-600 dark:text-orange-400 mr-3 text-2xl"></i>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                            <i class="fa-solid fa-book-reader text-orange-600 dark:text-orange-400 mr-2"></i>
                             Service Details
                         </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start space-x-3 text-gray-700 dark:text-gray-200">
-                                <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mt-1"></i>
-                                <span class="flex-1">Duration: Approximately 2 hours</span>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Duration: Approximately 2 hours
                             </li>
-                            <li class="flex items-start space-x-3 text-gray-700 dark:text-gray-200">
-                                <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mt-1"></i>
-                                <span class="flex-1">Available for special occasions</span>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                24 Ashtpadis recitation
                             </li>
-                            <li class="flex items-start space-x-3 text-gray-700 dark:text-gray-200">
-                                <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mt-1"></i>
-                                <span class="flex-1">Group or individual readings</span>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Morning or evening sessions
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Brings peace and solace
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="card-list-container">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                            <i class="fa-solid fa-calendar-check text-orange-600 dark:text-orange-400 mr-2"></i>
+                            Booking Options
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Available for special occasions
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Individual or group readings
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Flexible scheduling available
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Langar seva arrangements optional
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mt-8 card-list-container text-center">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                        Book a Service
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        For more information or to schedule Sukhmani Sahib Path, please contact us:
+                    </p>
+                    <div class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <p>
+                            <i class="fa-solid fa-phone mr-2"></i>
+                            <a [href]="'tel:' + contactInfo.phone" class="link-base">
+                                {{ contactInfo.phone }}
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-envelope mr-2"></i>
+                            <a [href]="'mailto:' + contactInfo.email" class="link-base">
+                                {{ contactInfo.email }}
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

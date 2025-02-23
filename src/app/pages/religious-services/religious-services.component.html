@@ -178,24 +178,63 @@
             </div>
 
             <div class="p-6">
-                <p class="text-gray-600 dark:text-gray-300">
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Sukhmani Sahib Path is a prayer composed by Sri Guru Arjan Dev Ji, known as the "Pearl of Peace."
                     This beautiful composition consists of 24 Ashtpadis and brings peace to the mind and solace to the
                     heart.
                 </p>
-                <div class="mt-6 card-list-container">
-                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
-                        Service Information
-                    </h3>
-                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                        <li>Duration: Approximately 2 hours</li>
-                        <li>Available for special occasions</li>
-                        <li>Group or individual readings</li>
-                    </ul>
+
+                <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                    <div class="card-list-container">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                            <i class="fa-solid fa-clock text-orange-600 dark:text-orange-400 mr-2"></i>
+                            Service Details
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Duration: Approximately 2 hours
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                24 Ashtpadis recitation
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Brings peace and solace
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-list-container">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                            <i class="fa-solid fa-users text-orange-600 dark:text-orange-400 mr-2"></i>
+                            Booking Options
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Available for special occasions
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Individual or group readings
+                            </li>
+                            <li class="flex items-center">
+                                <i
+                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                                Flexible scheduling available
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <a routerLink="/services/sukhmani-sahib"
-                    class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read
-                    More</a>
+                    class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read More</a>
             </div>
         </div>
 
@@ -246,135 +285,125 @@
                         </ul>
                     </div>
 
-                    <div class="card-list-container">
-                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                            <i class="fa-solid fa-list-check text-orange-600 dark:text-orange-400 mr-2"></i>
-                            Requirements
-                        </h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Advance booking required
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Pre-marriage counseling available
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Documentation requirements
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="card-list-container"></div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                        <i class="fa-solid fa-list-check text-orange-600 dark:text-orange-400 mr-2"></i>
+                        Requirements
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Advance booking required
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Pre-marriage counseling available
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Documentation requirements
+                        </li>
+                    </ul>
                 </div>
-                <a routerLink="/services/anand-karaj"
-                    class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read
-                    More</a>
             </div>
+            <a routerLink="/services/anand-karaj"
+                class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read
+                More</a>
+        </div>
+    </div>
+
+    <!-- Antim Ardas -->
+    <div id="antim-ardas" class="card mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="card-gradient p-6 flex items-center">
+            <div class="bg-gray-100/10 rounded-full p-2 mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white/90" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+            </div>
+            <h2 class="heading-2 text-white">Antim Ardas</h2>
         </div>
 
-        <!-- Antim Ardas -->
-        <div id="antim-ardas" class="card mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div class="card-gradient p-6 flex items-center">
-                <div class="bg-gray-100/10 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white/90" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                </div>
-                <h2 class="heading-2 text-white">Antim Ardas</h2>
-            </div>
-
-            <div class="p-6">
-                <div class="prose dark:prose-invert max-w-none">
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Antim Ardas is the final prayer service that marks the end of the mourning period. It includes
-                        the reading of Guru Granth Sahib Ji and the performance of the final Ardas, offering prayers for
-                        the departed soul and comfort to the family.
-                    </p>
-                </div>
-
-                <div class="mt-6 grid sm:grid-cols-2 gap-4">
-                    <div class="card-list-container">
-                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                            <i class="fa-solid fa-pray text-orange-600 dark:text-orange-400 mr-2"></i>
-                            Service Details
-                        </h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Final prayer ceremony
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Reading of Guru Granth Sahib Ji
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Ardas for departed soul
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-list-container">
-                        <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
-                            <i class="fa-solid fa-hands-helping text-orange-600 dark:text-orange-400 mr-2"></i>
-                            Support Services
-                        </h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Guidance through ceremony
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Langar arrangements
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
-                                Family support services
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a routerLink="/services/antim-ardas-ceremony"
-                    class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read More</a>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="card mb-8">
-            <div class="card-list-container text-center">
-                <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
-                    Book a Service
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    For more information or to schedule any of these services, please contact us:
+        <div class="p-6">
+            <div class="prose dark:prose-invert max-w-none">
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Antim Ardas is the final prayer service that marks the end of the mourning period. It includes
+                    the reading of Guru Granth Sahib Ji and the performance of the final Ardas, offering prayers for
+                    the departed soul and comfort to the family.
                 </p>
-                <div class="space-y-2 text-gray-600 dark:text-gray-300">
-                    <p>
-                        <i class="fa-solid fa-phone mr-2"></i>
-                        <a [href]="'tel:' + contactInfo.phone" class="link-base">
-                            {{ contactInfo.phone }}
-                        </a>
-                    </p>
-                    <p>
-                        <i class="fa-solid fa-envelope mr-2"></i>
-                        <a [href]="'mailto:' + contactInfo.email" class="link-base">
-                            {{ contactInfo.email }}
-                        </a>
-                    </p>
+            </div>
+
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="card-list-container">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                        <i class="fa-solid fa-pray text-orange-600 dark:text-orange-400 mr-2"></i>
+                        Service Details
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Final prayer ceremony
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Reading of Guru Granth Sahib Ji
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Ardas for departed soul
+                        </li>
+                    </ul>
                 </div>
+
+                <div class="card-list-container">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                        <i class="fa-solid fa-hands-helping text-orange-600 dark:text-orange-400 mr-2"></i>
+                        Support Services
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Guidance through ceremony
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Langar arrangements
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-orange-600 dark:text-orange-400 mr-2 text-sm"></i>
+                            Family support services
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a routerLink="/services/antim-ardas-ceremony"
+                class="text-primary-600 dark:text-primary-400 hover:underline mt-4 block">Read More</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="card mb-8">
+        <div class="card-list-container text-center">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                Book a Service
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                For more information or to schedule any of these services, please contact us:
+            </p>
+            <div class="space-y-2 text-gray-600 dark:text-gray-300">
+                <p>
+                    <i class="fa-solid fa-phone mr-2"></i>
+                    <a [href]="'tel:' + contactInfo.phone" class="link-base">
+                        {{ contactInfo.phone }}
+                    </a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope mr-2"></i>
+                    <a [href]="'mailto:' + contactInfo.email" class="link-base">
+                        {{ contactInfo.email }}
+                    </a>
+                </p>
             </div>
         </div>
     </div>
