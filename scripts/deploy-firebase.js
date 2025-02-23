@@ -64,7 +64,10 @@ async function deployToFirebase() {
         const timestamp = `${date} ${time}`;
 
         // Git commands
-        console.log('📝 Committing changes...');
+        console.log('📝 Preparing git changes...');
+        // Discard changes in docs folder
+        execSync('git checkout -- docs/', { stdio: 'inherit' });
+        // Stage and commit remaining changes
         execSync('git add .', { stdio: 'inherit' });
         execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
         execSync('git push', { stdio: 'inherit' });
