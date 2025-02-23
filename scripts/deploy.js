@@ -6,20 +6,20 @@ try {
   // Read and update version
   const versionPath = path.join(__dirname, '../src/version.json');
   const packagePath = path.join(__dirname, '../package.json');
-  
+
   // Read both files
   const versionInfo = require(versionPath);
   const packageJson = require(packagePath);
-  
+
   // Increment version
   const [major, minor, patch] = versionInfo.version.split('.').map(Number);
   const newVersion = `${major}.${minor}.${patch + 1}`;
-  
+
   // Update both files
   versionInfo.version = newVersion;
   versionInfo.lastUpdate = new Date().toISOString();
   packageJson.version = newVersion;
-  
+
   // Save updates
   fs.writeFileSync(versionPath, JSON.stringify(versionInfo, null, 2));
   fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
@@ -27,7 +27,7 @@ try {
 
   // Run build
   console.log('📦 Building application...');
-  execSync('npm run build', { stdio: 'inherit' });
+  execSync('npm run build:prod:git', { stdio: 'inherit' });
 
   // Format date
   const now = new Date();
