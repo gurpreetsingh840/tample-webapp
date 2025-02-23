@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { ContactInfoService } from '../../shared/services/contact-info.service';
@@ -12,5 +12,5 @@ import { ContactInfoService } from '../../shared/services/contact-info.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  constructor(public contactInfo: ContactInfoService) {}
+  constructor(public contactInfo: ContactInfoService) { }
 }

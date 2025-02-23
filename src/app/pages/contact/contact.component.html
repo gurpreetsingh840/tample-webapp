@@ -15,7 +15,7 @@
       <div class="p-6">
         <div class="grid md:grid-cols-2 gap-8">
           <!-- Address Section -->
-          <div class="space-y-4">
+          <div class="space-y-4 card-list-container">
             <div class="flex items-start">
               <div class="flex-shrink-0">
                 <div class="icon-circle">
@@ -27,12 +27,17 @@
                 <p class="text-gray-600 dark:text-gray-300">
                   {{ contactInfo.address.street }}<br>
                   {{ contactInfo.address.city }}, {{ contactInfo.address.state }} {{ contactInfo.address.zip }}
+                  <br>
+                  <a [href]="contactInfo.getMapsUrl()" target="_blank" rel="noopener noreferrer" class="link-base">
+                    Get Directions
+                    <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                  </a>
                 </p>
               </div>
             </div>
 
             <!-- Contact links section -->
-            <div class="flex items-start">
+            <div class=" flex items-start">
               <div class="flex-shrink-0">
                 <div class="icon-circle">
                   <i class="fa-solid fa-phone icon-circle-icon"></i>
@@ -64,7 +69,7 @@
           </div>
 
           <!-- Quick Links -->
-          <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-6">
+          <div class="card-list-container">
             <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Quick Links</h3>
             <div class="space-y-4">
               <a routerLink="/about"
