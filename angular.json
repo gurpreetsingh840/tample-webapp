@@ -53,7 +53,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/tample-webapp/",
+            "baseHref": "/",
             "preserveSymlinks": true
           },
           "configurations": {

@@ -1,16 +1,19 @@
 {
   "name": "tample-webapp",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:dev",
+    "build:dev": "ng build",
+    "build:prod": "ng build --configuration production && npm run postbuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postbuild": "node scripts/postbuild.js",
     "deploy": "node scripts/deploy.js",
     "lint": "eslint \"src/**/*.{ts,html}\" --fix",
-    "format": "prettier --write \"src/**/*.{ts,html,css,scss}\""
+    "format": "prettier --write \"src/**/*.{ts,html,css,scss}\"",
+    "deploy:firebase": "node scripts/deploy-firebase.js"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +53,7 @@
     "postcss": "^8.5.1",
     "prettier": "^3.5.1",
     "tailwindcss": "^3.4.17",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "firebase-tools": "^13.5.1"
   }
 }
