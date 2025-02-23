@@ -1,9 +1,11 @@
 <app-page-hero title="Antim Ardas Ceremony" icon="M12 6v6m0 0v6m0-6h6m-6 0H6"
-    description="The Antim Ardas Ceremony is the final prayer service held for a deceased individual, providing closure and honoring the departed soul.">
+    description="The Antim Ardas Ceremony is the final prayer service held for a deceased individual, providing closure and honoring the departed soul."
+    class="bg-gradient-to-r from-orange-600 to-orange-400">
 </app-page-hero>
-<div class="page-container">
-    <div class="max-w-5xl mx-auto">
-        <div class="card mb-8 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+
+<div class="page-container py-8">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="card mb-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
             <div class="card-gradient p-6 flex items-center">
                 <div class="bg-gray-100/10 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white/90" fill="none"
@@ -14,8 +16,14 @@
                 </div>
                 <h1 class="heading-2 text-white">Antim Ardas Ceremony</h1>
             </div>
-            <div class="p-6">
+            <div class="p-8">
                 <div class="prose dark:prose-invert max-w-none">
+                    <div class="bg-orange-50 dark:bg-gray-700/50 p-6 rounded-lg mb-8">
+                        <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed italic">
+                            "A sacred ceremony of remembrance and prayer, offering peace to the departed soul and
+                            strength to the family."
+                        </p>
+                    </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         The Antim Ardas Ceremony is the final prayer service held for a deceased individual. It is a
                         solemn occasion that provides closure and honors the departed soul.
@@ -42,8 +50,11 @@
                         for the departed soul and comfort to the family.
                     </p>
                 </div>
-                <div class="mt-6 grid sm:grid-cols-2 gap-4">
-                    <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 shadow-md">
+
+                <!-- Enhanced Information Cards -->
+                <div class="mt-8 grid sm:grid-cols-2 gap-6">
+                    <div
+                        class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
                         <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
                             <i class="fa-solid fa-pray text-orange-600 dark:text-orange-400 mr-2"></i>
                             Service Details
@@ -66,7 +77,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 shadow-md">
+
+                    <div
+                        class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
                         <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
                             <i class="fa-solid fa-hands-helping text-orange-600 dark:text-orange-400 mr-2"></i>
                             Support Services
