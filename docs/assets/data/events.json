@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Guru Nanak Dev Ji Gurpurab",
-            "date": "2025-04-15",
+            "date": "2025-11-23",
             "showDateVariationWarning": true,
             "description": "Guru Nanak Dev Ji, born in Nankana Sahib on 1469-04-15, is the first Sikh Guru and the founder of Sikhism. His teachings emphasize the oneness of God, the importance of honest living, and selfless service. He traveled extensively, spreading his message of love and equality. His hymns and teachings are enshrined in the Guru Granth Sahib, the Sikh scripture. He established the institution of Langar, a free community kitchen, as a symbol of equality. Guru Nanak Dev Ji's legacy continues to inspire millions worldwide.",
             "time": "05:00 AM"
@@ -18,21 +18,21 @@
         {
             "id": 3,
             "name": "Guru Angad Dev Ji Gurpurab",
-            "date": "2025-03-31",
+            "date": "2025-04-18",
             "showDateVariationWarning": true,
             "description": "Guru Angad Dev Ji, the second Sikh Guru, was born in Matte di Sarai on 1504-03-31. He is best known for formalizing the Gurmukhi script, which is used to write the Punjabi language. This made it easier for Sikhs to read and understand the teachings of the Gurus. He also continued the tradition of Langar, strengthening its role in Sikh community life. Guru Angad Dev Ji's dedication to seva (selfless service) and his contributions to Sikh literature are highly valued."
         },
         {
             "id": 4,
             "name": "Guru Angad Dev Ji Jyoti Jot Divas (Departure)",
-            "date": "2025-03-29",
+            "date": "2025-04-29",
             "showDateVariationWarning": true,
             "description": "Marks the passing of Guru Angad Dev Ji on 1552-03-29. His contributions to Sikhism, especially the development of Gurmukhi, are remembered on this day."
         },
         {
             "id": 5,
             "name": "Guru Amar Das Ji Gurpurab",
-            "date": "2025-05-05",
+            "date": "2025-05-23",
             "showDateVariationWarning": true,
             "description": "Guru Amar Das Ji, the third Sikh Guru, was born in Basarke Gillan on 1479-05-05. He strengthened the institution of Langar, making it an integral part of Sikh practice. He emphasized equality and opposed the caste system, welcoming people from all backgrounds to partake in Langar. He also established 22 Manjis (religious districts) to spread Sikh teachings. Guru Amar Das Ji's commitment to social justice and his efforts to consolidate the Sikh community are remembered with reverence."
         },
@@ -46,7 +46,7 @@
         {
             "id": 7,
             "name": "Guru Ram Das Ji Gurpurab",
-            "date": "2025-09-24",
+            "date": "2025-10-09",
             "showDateVariationWarning": true,
             "description": "Guru Ram Das Ji, the fourth Sikh Guru, was born in Chuna Mandi, Lahore on 1534-09-24. He founded the city of Amritsar, which is now the spiritual center of Sikhism. He began the construction of the Harmandir Sahib (Golden Temple), which houses the Guru Granth Sahib. He also contributed significantly to the development of the Sikh faith and its institutions. Guru Ram Das Ji's vision and his organizational skills played a crucial role in shaping the Sikh community."
         },
@@ -60,51 +60,206 @@
         {
             "id": 9,
             "name": "Guru Arjan Dev Ji Shaheedi Diwas",
-            "date": "2025-04-15",
+            "date": "2025-06-16",
             "showDateVariationWarning": true,
             "description": "Guru Arjan Dev Ji, the fifth Sikh Guru, was born in Goindval on 1563-04-15. He compiled the Adi Granth, which is the primary scripture of Sikhism. It includes the teachings of the Sikh Gurus and saints from other faiths, emphasizing the inclusiveness of Sikh philosophy. He was martyred in Lahore for refusing to renounce his faith, becoming the first Sikh martyr. His sacrifice is remembered as a testament to his unwavering commitment to truth and righteousness."
         },
         {
             "id": 10,
             "name": "Guru Hargobind Ji Gurpurab",
-            "date": "2025-06-19",
+            "date": "2025-06-30",
             "showDateVariationWarning": true,
             "description": "Guru Hargobind Ji, the sixth Sikh Guru, was born in Wadali, Amritsar on 1595-06-19. He introduced the concept of Miri-Piri, representing spiritual and temporal sovereignty. He built the Akal Takht, a symbol of Sikh political power, and established a Sikh army. He emphasized the importance of both spiritual and martial strength. Guru Hargobind Ji's leadership marked a shift in Sikh history, from a purely spiritual focus to one that also embraced political and military aspects."
         },
         {
             "id": 11,
             "name": "Guru Tegh Bahadur Ji Gurpurab",
-            "date": "2025-04-01",
+            "date": "2025-04-18",
             "showDateVariationWarning": true,
             "description": "Guru Tegh Bahadur Ji, the ninth Sikh Guru, was born in Amritsar on 1621-04-01. He is remembered for his sacrifice to protect religious freedom. He was martyred in Delhi for standing up against forced conversions."
         },
         {
             "id": 12,
             "name": "Guru Gobind Singh Ji Gurpurab",
-            "date": "2025-01-05",
+            "date": "2025-01-17",
             "showDateVariationWarning": true,
             "description": "Guru Gobind Singh Ji, the tenth Sikh Guru, was born in Patna Sahib on 1666-01-05. He founded the Khalsa in 1699, a significant event in Sikh history. He was a warrior, poet, and philosopher, and his teachings continue to inspire Sikhs worldwide."
         },
         {
             "id": 13,
             "name": "Guru Har Rai Ji Gurpurab",
-            "date": "2025-01-16",
+            "date": "2025-03-14",
             "showDateVariationWarning": true,
             "description": "Guru Har Rai Ji, the seventh Sikh Guru, was born in Kiratpur Sahib on 1630-01-16. He is remembered for his compassion and efforts to preserve the environment. He established hospitals and herbal gardens, emphasizing the importance of health and nature."
         },
         {
             "id": 14,
             "name": "Guru Har Rai Ji Jyoti Jot Divas (Departure)",
-            "date": "2025-02-20",
+            "date": "2025-10-06",
             "showDateVariationWarning": true,
             "description": "Marks the passing of Guru Har Rai Ji on 1661-02-20. His contributions to Sikhism, especially in the fields of medicine and environmental preservation, are remembered on this day."
         },
         {
             "id": 15,
             "name": "Guru Ravidas Ji Gurpurab",
-            "date": "2025-02-24",
+            "date": "2025-02-15",
             "showDateVariationWarning": true,
             "description": "Guru Ravidas Ji, a revered saint and poet, was born in Varanasi on 1377-02-24. His teachings focus on equality, unity, and devotion to God. His hymns are included in the Guru Granth Sahib, guiding Sikhs towards a just and inclusive society."
+        },
+        {
+            "id": 16,
+            "name": "Vaisakhi (Creation of Khalsa)",
+            "date": "2025-04-14",
+            "showDateVariationWarning": true,
+            "description": "Vaisakhi marks the birth of the Khalsa Panth in 1699, when Guru Gobind Singh Ji created the order of the Khalsa. This historic event transformed the Sikh community and established the visible identity of the Sikhs. It's celebrated as the Sikh New Year and harvest festival.",
+            "time": "00:00 AM"
+        },
+        {
+            "id": 17,
+            "name": "Guru Har Krishan Ji Gurpurab",
+            "date": "2025-07-23",
+            "showDateVariationWarning": true,
+            "description": "Guru Har Krishan Ji, the eighth Sikh Guru, became Guru at the young age of five and showed remarkable wisdom. He is remembered for his healing of sick during a smallpox epidemic in Delhi."
+        },
+        {
+            "id": 18,
+            "name": "Bandi Chhor Divas / Diwali",
+            "date": "2025-10-31",
+            "showDateVariationWarning": true,
+            "description": "Celebrates Guru Hargobind Ji's release from Gwalior Fort along with 52 Hindu kings. The Guru insisted on the release of the other prisoners, leading to the title 'Bandi Chhor' (Liberator)."
+        },
+        {
+            "id": 19,
+            "name": "Maghi (40 Mukte)",
+            "date": "2025-01-13",
+            "showDateVariationWarning": true,
+            "description": "Commemorates the sacrifice of the Forty Liberated Ones (Chali Mukte) who fought alongside Guru Gobind Singh Ji at the Battle of Muktsar in 1705."
+        },
+        {
+            "id": 20,
+            "name": "Holla Mohalla",
+            "date": "2025-03-17",
+            "showDateVariationWarning": true,
+            "description": "A festival established by Guru Gobind Singh Ji to demonstrate martial arts and military exercises. It follows Holi by one day and celebrates the warrior spirit of the Sikhs."
+        },
+        {
+            "id": 21,
+            "name": "Shaheedi Divas Sahibzade",
+            "date": "2025-12-26",
+            "showDateVariationWarning": true,
+            "description": "Martyrdom day of the younger Sahibzadas of Guru Gobind Singh Ji - Baba Zorawar Singh Ji and Baba Fateh Singh Ji, who were martyred at ages 9 and 7 respectively."
+        },
+        {
+            "id": 22,
+            "name": "Parkash Guru Granth Sahib",
+            "date": "2025-09-01",
+            "showDateVariationWarning": true,
+            "description": "Commemorates the first installation of the Guru Granth Sahib in Harmandir Sahib by Guru Arjan Dev Ji in 1604."
+        },
+        {
+            "id": 23,
+            "name": "Gurgaddi Guru Granth Sahib",
+            "date": "2025-10-20",
+            "showDateVariationWarning": true,
+            "description": "Marks the day when Guru Gobind Singh Ji bestowed the Guruship on Sri Guru Granth Sahib in 1708 at Nanded, declaring it the eternal Guru of the Sikhs."
+        },
+        {
+            "id": 24,
+            "name": "Shahidi Divas Guru Tegh Bahadur Ji",
+            "date": "2025-11-24",
+            "showDateVariationWarning": true,
+            "description": "Commemorates the martyrdom of Guru Tegh Bahadur Ji, who sacrificed his life protecting religious freedom and human rights in 1675."
+        },
+        {
+            "id": 25,
+            "name": "Baba Deep Singh Ji Shaheedi Divas",
+            "date": "2025-11-11",
+            "showDateVariationWarning": true,
+            "description": "Remembers the martyrdom of Baba Deep Singh Ji, who fought to liberate Harmandir Sahib from Afghan forces in 1757."
+        },
+        {
+            "id": 26,
+            "name": "Magh Sankranti",
+            "date": "2025-01-14",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Magh in the Nanakshahi calendar. Marks the sun's transit into a new house."
+        },
+        {
+            "id": 27,
+            "name": "Phagun Sankranti",
+            "date": "2025-02-12",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Phagun in the Nanakshahi calendar."
+        },
+        {
+            "id": 28,
+            "name": "Chet Sankranti",
+            "date": "2025-03-14",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Chet in the Nanakshahi calendar."
+        },
+        {
+            "id": 29,
+            "name": "Vaisakh Sankranti",
+            "date": "2025-04-14",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Vaisakh, marks the start of the Nanakshahi New Year."
+        },
+        {
+            "id": 30,
+            "name": "Jeth Sankranti",
+            "date": "2025-05-15",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Jeth in the Nanakshahi calendar."
+        },
+        {
+            "id": 31,
+            "name": "Harh Sankranti",
+            "date": "2025-06-15",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Harh in the Nanakshahi calendar."
+        },
+        {
+            "id": 32,
+            "name": "Sawan Sankranti",
+            "date": "2025-07-16",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Sawan in the Nanakshahi calendar."
+        },
+        {
+            "id": 33,
+            "name": "Bhadon Sankranti",
+            "date": "2025-08-17",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Bhadon in the Nanakshahi calendar."
+        },
+        {
+            "id": 34,
+            "name": "Assu Sankranti",
+            "date": "2025-09-17",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Assu in the Nanakshahi calendar."
+        },
+        {
+            "id": 35,
+            "name": "Katak Sankranti",
+            "date": "2025-10-17",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Katak in the Nanakshahi calendar."
+        },
+        {
+            "id": 36,
+            "name": "Maghar Sankranti",
+            "date": "2025-11-16",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Maghar in the Nanakshahi calendar."
+        },
+        {
+            "id": 37,
+            "name": "Poh Sankranti",
+            "date": "2025-12-16",
+            "showDateVariationWarning": false,
+            "description": "Beginning of the month of Poh in the Nanakshahi calendar."
         }
     ]
 }
