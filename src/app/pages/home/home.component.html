@@ -1,12 +1,11 @@
 <!-- Hero Section -->
-<section class="relative h-[65vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
-         url('assets/golden-temple-dawn.jpg');">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
-  <div class="relative z-10 container mx-auto px-4 h-full flex flex-col 
-              justify-center items-center text-center">
+<section class="hero-section"
+  [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(assets/golden-temple-dawn.jpg)'}">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <!-- Khanda Symbol -->
     <div class="mb-6">
-      <img src="assets/khanda.svg" alt="Khanda Symbol" class="h-32 w-32" aria-hidden="true">
+      <img src="assets/khanda.svg" alt="Khanda Symbol" class="khanda-logo" aria-hidden="true">
     </div>
 
     <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
@@ -28,9 +27,9 @@
 </section>
 
 <!-- Welcome Section -->
-<section class="py-16 bg-gray-100 dark:bg-gray-900">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center">
+<section class="section-default section-dark">
+  <div class="content-container">
+    <div class="content-narrow">
       <h2 class="heading-2 mb-6">Welcome to Our Spiritual Home</h2>
       <p class="text-body mb-8">
         Welcome, and thank you for visiting Gurdwara Singh Sabha Richmond, VA online.
@@ -43,17 +42,17 @@
 </section>
 
 <!-- Services Grid -->
-<section id="services" class="py-16 bg-gray-50 dark:bg-gray-800">
-  <div class="container mx-auto px-4">
+<section id="services" class="section-default section-light">
+  <div class="content-container">
     <h2 class="heading-2 text-center mb-12">Our Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="service-grid">
 
       <!-- Weekly Programs -->
       <div class="card p-8 hover:shadow-lg transition">
         <div class="flex flex-col h-full">
           <div class="flex items-center mb-4">
-            <div class="p-3 bg-orange-100 dark:bg-gray-600 rounded-full mr-4">
-              <i class="fa-solid fa-calendar-days text-orange-600 dark:text-orange-400 text-xl"></i>
+            <div class="icon-circle">
+              <i class="fa-solid fa-calendar-days icon-circle-icon"></i>
             </div>
             <h3 class="heading-3">Weekly Programs</h3>
           </div>
@@ -76,8 +75,8 @@
       <div class="card p-8 hover:shadow-lg transition">
         <div class="flex flex-col h-full">
           <div class="flex items-center mb-4">
-            <div class="p-3 bg-orange-100 dark:bg-gray-600 rounded-full mr-4">
-              <i class="fa-solid fa-book-open text-orange-600 dark:text-orange-400 text-xl"></i>
+            <div class="icon-circle">
+              <i class="fa-solid fa-book-open icon-circle-icon"></i>
             </div>
             <h3 class="heading-3">Religious Services</h3>
           </div>
@@ -103,10 +102,10 @@
 </section>
 
 <!-- Mission Section -->
-<section class="py-16 bg-primary-600 dark:bg-gray-900 text-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+<section class="section-default section-primary">
+  <div class="content-container">
+    <div class="content-narrow">
+      <h2 class="heading-2 text-white mb-6">Our Mission</h2>
       <p class="text-lg mb-8">
         The objective of Gurdwara Singh Sabha is to Preach Guru Nanak Dev Ji's universal
         message of brotherhood, learn, practice and promote religious, cultural and social
@@ -121,9 +120,9 @@
 </section>
 
 <!-- Contact Section -->
-<section class="py-16 bg-gray-50 dark:bg-gray-800">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center">
+<section class="section-default section-light">
+  <div class="content-container">
+    <div class="content-narrow">
       <h2 class="heading-2 mb-6">Visit Us</h2>
       <app-contact-info [directionsClass]="'btn-primary'" />
     </div>

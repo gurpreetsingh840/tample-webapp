@@ -100,6 +100,63 @@
       opacity: 1;
     }
   }
+
+  /* Hero section styles */
+  .hero-section {
+    @apply relative h-[65vh] bg-cover bg-center;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-black/60 to-black/30;
+  }
+
+  .hero-content {
+    @apply relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center;
+  }
+
+  /* Section layouts */
+  .section-default {
+    @apply py-16;
+  }
+
+  .section-light {
+    @apply bg-gray-50 dark:bg-gray-800;
+  }
+
+  .section-dark {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  .section-primary {
+    @apply bg-primary-600 dark:bg-gray-900 text-white;
+  }
+
+  /* Container layouts */
+  .content-container {
+    @apply container mx-auto px-4;
+  }
+
+  .content-narrow {
+    @apply max-w-3xl mx-auto text-center;
+  }
+
+  /* Service card specific */
+  .service-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+
+  .icon-circle {
+    @apply w-12 h-12 rounded-full bg-orange-100 dark:bg-gray-600 flex items-center justify-center mr-4;
+  }
+
+  .icon-circle-icon {
+    @apply text-orange-600 dark:text-orange-400 text-xl;
+  }
+
+  /* Common spacing */
+  .khanda-logo {
+    @apply h-32 w-32;
+  }
 }
 
 @layer utilities {
