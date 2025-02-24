@@ -1,6 +1,6 @@
 {
   "name": "tample-webapp",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -15,7 +15,7 @@
     "lint": "eslint \"src/**/*.{ts,html}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,html,css,scss}\"",
     "deploy:firebase": "node scripts/deploy-firebase.js",
-    "deploy:all": "npm run deploy:firebase --no-commit && npm run deploy --no-version"
+    "deploy:all": "npm run deploy:firebase -- --no-commit && npm run deploy -- --no-version"
   },
   "private": true,
   "dependencies": {

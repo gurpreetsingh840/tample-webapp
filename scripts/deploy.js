@@ -5,7 +5,6 @@ const path = require('path');
 const shouldVersion = !process.argv.includes('--no-version');
 
 try {
-
   // Read and update version
   const versionPath = path.join(__dirname, '../src/version.json');
   const packagePath = path.join(__dirname, '../package.json');
