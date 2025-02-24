@@ -1,6 +1,6 @@
 // src/app/app.component.ts
 import { CommonModule } from '@angular/common';
-import { Component, HostBinding, OnInit, effect, signal } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit, effect, signal } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -29,6 +29,27 @@ import { HeaderComponent } from './shared/components/header/header.component';
         </div>
       </main>
       <app-footer />
+
+      <!-- Scroll to top button -->
+      <button
+        *ngIf="showScrollTop"
+        (click)="scrollToTop()"
+        class="fixed bottom-6 right-6 p-3 rounded-full bg-slate-700 dark:bg-slate-600 text-white shadow-lg hover:bg-slate-600 dark:hover:bg-slate-500 transition-all duration-300 transform hover:scale-110"
+        aria-label="Scroll to top">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-6 w-6" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor">
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M5 15l7-7 7 7" 
+          />
+        </svg>
+      </button>
     </div>
   `,
   styles: [`
@@ -71,6 +92,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 })
 export class AppComponent implements OnInit {
   isNavigating = false;
+  showScrollTop = false;
 
   public darkMode = signal<boolean>(
     JSON.parse(window.localStorage.getItem('darkMode') ?? String(window.matchMedia('(prefers-color-scheme: dark)').matches))
@@ -78,6 +100,15 @@ export class AppComponent implements OnInit {
 
   @HostBinding('class.dark') get mode() {
     return this.darkMode();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.showScrollTop = window.scrollY > 200;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   constructor(private router: Router) {
@@ -94,7 +125,7 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.isNavigating = false;
-        }, 2000); // Match the animation duration
+        }, 300); // Match the animation duration
       }
     });
   }
