@@ -75,7 +75,7 @@ async function deployToFirebase() {
             execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
             execSync('git push', { stdio: 'inherit' });
         } else {
-            console.log('Skipping git operations as --no-commit flag is present');
+            console.log('📝 Skipping git operations as --no-commit flag is present');
         }
 
         console.log(`✨ Version ${newVersion} deployed successfully!`);

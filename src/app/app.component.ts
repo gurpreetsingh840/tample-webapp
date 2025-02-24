@@ -34,7 +34,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
       <button
         *ngIf="showScrollTop"
         (click)="scrollToTop()"
-        class="fixed bottom-6 right-6 p-3 rounded-full bg-slate-700 dark:bg-slate-600 text-white shadow-lg hover:bg-slate-600 dark:hover:bg-slate-500 transition-all duration-300 transform hover:scale-110"
+        class="fixed bottom-6 right-6 p-3 rounded-full bg-rose-600 dark:bg-rose-500 text-white shadow-lg hover:bg-rose-500 dark:hover:bg-rose-400 transition-all duration-300 transform hover:scale-110"
         aria-label="Scroll to top">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
