@@ -2,6 +2,8 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const shouldCommit = !process.argv.includes('--no-commit');
+
 function executeCommand(command) {
     try {
         execSync(command, { stdio: 'inherit' });
@@ -64,13 +66,17 @@ async function deployToFirebase() {
         const timestamp = `${date} ${time}`;
 
         // Git commands
-        console.log('📝 Preparing git changes...');
-        // Discard changes in docs folder
-        execSync('git checkout -- docs/', { stdio: 'inherit' });
-        // Stage and commit remaining changes
-        execSync('git add .', { stdio: 'inherit' });
-        execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
-        execSync('git push', { stdio: 'inherit' });
+        if (shouldCommit) {
+            console.log('📝 Preparing git changes...');
+            // Discard changes in docs folder
+            execSync('git checkout -- docs/', { stdio: 'inherit' });
+            // Stage and commit remaining changes
+            execSync('git add .', { stdio: 'inherit' });
+            execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });
+            execSync('git push', { stdio: 'inherit' });
+        } else {
+            console.log('Skipping git operations as --no-commit flag is present');
+        }
 
         console.log(`✨ Version ${newVersion} deployed successfully!`);
 

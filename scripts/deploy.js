@@ -2,7 +2,10 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const shouldVersion = !process.argv.includes('--no-version');
+
 try {
+
   // Read and update version
   const versionPath = path.join(__dirname, '../src/version.json');
   const packagePath = path.join(__dirname, '../package.json');
@@ -13,7 +16,7 @@ try {
 
   // Increment version
   const [major, minor, patch] = versionInfo.version.split('.').map(Number);
-  const newVersion = `${major}.${minor}.${patch + 1}`;
+  const newVersion = `${major}.${minor}.${patch + (shouldVersion ? 1 : 0)}`;
 
   // Update both files
   versionInfo.version = newVersion;
@@ -21,9 +24,13 @@ try {
   packageJson.version = newVersion;
 
   // Save updates
-  fs.writeFileSync(versionPath, JSON.stringify(versionInfo, null, 2));
-  fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
-  console.log(`📝 Version bumped to ${newVersion}`);
+  if (shouldVersion) {
+    fs.writeFileSync(versionPath, JSON.stringify(versionInfo, null, 2));
+    fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
+    console.log(`📝 Version bumped to ${newVersion}`);
+  } else {
+    console.log(`📝 Version remains at ${newVersion}`);
+  }
 
   // Run build
   console.log('📦 Building application...');
