@@ -25,11 +25,13 @@
             </div>
 
             <!-- Events Timeline -->
-            <div class="space-y-16">
-                <ng-container *ngFor="let month of displayedMonths">
+            <div>
+                <ng-container *ngFor="let month of displayedMonths;let idx = index">
                     <!-- Month Header -->
-                    <div [id]="'month-' + month.replace(' ', '-')" class="relative flex items-center justify-center">
-                        <h2 class="bg-white dark:bg-gray-900 px-4 py-2 text-xl font-bold text-gray-800 dark:text-white">
+                    <div [id]="'month-' + month.replace(' ', '-')"
+                        class="relative flex items-center justify-center mb-8" [class.mt-16]="idx !== 0">
+                        <h2
+                            class="bg-orange-300 dark:bg-gray-500 px-4 py-2 text-xl font-bold text-gray-800 dark:text-white">
                             {{ month }}
                         </h2>
                     </div>
@@ -39,7 +41,7 @@
                         class="relative flex flex-col md:flex-row items-center justify-between"
                         [class.md:flex-row-reverse]="even">
                         <div class="w-full md:w-5/12"></div>
-                        <span class="px-3 py-1 text-sm font-semibold text-white bg-blue-500 rounded-full">
+                        <span class="px-3 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full">
                             {{ getFormattedDate(event.date) }}
                         </span>
                         <div
