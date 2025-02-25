@@ -83,13 +83,22 @@ export class EventsService {
 
     formatDate(dateString: string): string {
         const date = this.parseDate(dateString);
-        return date.toLocaleDateString('en-US', {
-            month: 'long',
-            day: 'numeric'
-        });
+        const month = date.toLocaleString('default', { month: 'short' }); // Gets 3-letter month
+        const day = date.getDate().toString().padStart(2, '0'); // Pads single digits with 0
+        return `${month} ${day}`;
     }
 
     getShortMonth(month: string): string {
         return month.split(' ')[0].substring(0, 3);
+    }
+
+    getMonthFromDate(dateString: string): string {
+        const date = this.parseDate(dateString);
+        return date.toLocaleString('default', { month: 'short' });
+    }
+
+    getDayFromDate(dateString: string): string {
+        const date = this.parseDate(dateString);
+        return date.getDate().toString().padStart(2, '0');
     }
 }

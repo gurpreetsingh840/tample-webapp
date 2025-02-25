@@ -41,6 +41,14 @@ export class EventsComponent implements OnInit, AfterViewInit {
         return this.eventsService.getShortMonth(month);
     }
 
+    getMonthFromDate(dateString: string): string {
+        return this.eventsService.getMonthFromDate(dateString);
+    }
+
+    getDayFromDate(dateString: string): string {
+        return this.eventsService.getDayFromDate(dateString);
+    }
+
     scrollToMonth(month: string) {
         const element = document.getElementById(`month-${month.replace(' ', '-')}`);
         if (element) {

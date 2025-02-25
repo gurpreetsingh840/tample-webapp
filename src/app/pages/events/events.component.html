@@ -5,7 +5,7 @@
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Month Navigation -->
     <div class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
-        <div class=" max-w-7xl mx-auto px-4 py-2 overflow-x-auto hide-scrollbar">
+        <div class="max-w-7xl mx-auto px-4 py-2 overflow-x-auto hide-scrollbar">
             <div class="flex space-x-4">
                 <button *ngFor="let month of displayedMonths" (click)="scrollToMonth(month)"
                     [class.bg-orange-500]="currentMonth === month" [class.text-white]="currentMonth === month" class="px-4 py-2 rounded-full text-sm font-medium transition-all
@@ -17,44 +17,47 @@
         </div>
     </div>
 
-    <!-- Timeline Container -->
-    <div class="max-w-7xl mx-auto px-4 py-8" #timelineContainer>
-        <div class="relative">
-            <!-- Timeline line -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-orange-200 dark:bg-orange-800">
+    <!-- Events Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div *ngFor="let month of displayedMonths" class="mb-16">
+            <!-- Month Header -->
+            <div [id]="'month-' + month.replace(' ', '-')" class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white border-b-2 border-orange-500 pb-2">
+                    {{ month }}
+                </h2>
             </div>
 
-            <!-- Events Timeline -->
-            <div>
-                <ng-container *ngFor="let month of displayedMonths;let idx = index">
-                    <!-- Month Header -->
-                    <div [id]="'month-' + month.replace(' ', '-')"
-                        class="relative flex items-center justify-center mb-8" [class.mt-16]="idx !== 0">
-                        <h2
-                            class="bg-orange-300 dark:bg-gray-500 px-4 py-2 text-xl font-bold text-gray-800 dark:text-white">
-                            {{ month }}
-                        </h2>
-                    </div>
+            <!-- Events List -->
+            <div class="space-y-6">
+                <div *ngFor="let event of groupedEvents[month]"
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-1">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                            <!-- Date Badge -->
+                            <div class="inline-flex items-center">
+                                <div class="bg-orange-500 text-white rounded-md text-center w-[60px]">
+                                    <div class="text-sm font-medium py-0.5 border-b border-orange-400">
+                                        {{ getMonthFromDate(event.date) }}
+                                    </div>
+                                    <div class="text-sm font-bold py-0.5">
+                                        {{ getDayFromDate(event.date) }}
+                                    </div>
+                                </div>
+                            </div>
 
-                    <!-- Events for the month -->
-                    <div *ngFor="let event of groupedEvents[month]; let even = even"
-                        class="relative flex flex-col md:flex-row items-center justify-between"
-                        [class.md:flex-row-reverse]="even">
-                        <div class="w-full md:w-5/12"></div>
-                        <span class="px-3 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full">
-                            {{ getFormattedDate(event.date) }}
-                        </span>
-                        <div
-                            class="w-full md:w-5/12 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md mt-4 md:mt-0 text-center md:text-left">
-                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ event.name }}</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-300">{{ getFormattedDate(event.date) }}</p>
-                            <p *ngIf="event.showDateVariationWarning" class="text-xs text-orange-500 mt-1">
-                                Note: Event dates may vary based on the Nanaksahi Calendar and lunar calculations.
-                            </p>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">{{ event.description }}</p>
+                            <!-- Event Details -->
+                            <div class="flex-grow pl-4">
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                                    {{ event.name }}
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300">{{ event.description }}</p>
+                                <p *ngIf="event.showDateVariationWarning" class="text-sm text-orange-500 mt-2">
+                                    Note: Date may vary based on the Nanaksahi Calendar and lunar calculations.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </ng-container>
+                </div>
             </div>
         </div>
     </div>
