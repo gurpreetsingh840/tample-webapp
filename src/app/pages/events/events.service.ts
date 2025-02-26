@@ -12,7 +12,8 @@ export interface EventData {
     date: string;
     showDateVariationWarning?: boolean;
     description: string;
-    time?: string;
+    timeFrom?: string;
+    timeTo?: string;
     showFullDescription?: boolean;
     location?: string;
 }
@@ -106,5 +107,24 @@ export class EventsService {
     getGoogleMapsUrl(location: string): string {
         // Creates a Google Maps URL that opens directions from current location
         return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location)}&travelmode=driving`;
+    }
+
+    formatTimeRange(timeFrom?: string, timeTo?: string): string {
+        if (!timeFrom && !timeTo) return '';
+        if (timeFrom && !timeTo) return this.format12Hour(timeFrom);
+        if (!timeFrom && timeTo) return `Until ${this.format12Hour(timeTo)}`;
+        return `${this.format12Hour(timeFrom!)} - ${this.format12Hour(timeTo!)}`;
+    }
+
+    private format12Hour(time: string): string {
+        try {
+            const [hours, minutes] = time.split(':');
+            const hour = parseInt(hours);
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const hour12 = hour % 12 || 12;
+            return `${hour12}${minutes ? ':' + minutes : ''} ${ampm}`;
+        } catch {
+            return time;
+        }
     }
 }

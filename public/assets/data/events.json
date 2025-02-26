@@ -6,7 +6,8 @@
             "date": "2025-11-23",
             "showDateVariationWarning": true,
             "description": "Guru Nanak Dev Ji, born in Nankana Sahib on 1469-04-15, is the first Sikh Guru and the founder of Sikhism. His teachings emphasize the oneness of God, the importance of honest living, and selfless service. He traveled extensively, spreading his message of love and equality. His hymns and teachings are enshrined in the Guru Granth Sahib, the Sikh scripture. He established the institution of Langar, a free community kitchen, as a symbol of equality. Guru Nanak Dev Ji's legacy continues to inspire millions worldwide.",
-            "time": "05:00 AM"
+            "timeFrom": "05:00 AM",
+            "timeTo": "08:00 PM"
         },
         {
             "id": 2,
@@ -113,7 +114,8 @@
             "date": "2025-04-14",
             "showDateVariationWarning": true,
             "description": "Vaisakhi marks the birth of the Khalsa Panth in 1699, when Guru Gobind Singh Ji created the order of the Khalsa. This historic event transformed the Sikh community and established the visible identity of the Sikhs. It's celebrated as the Sikh New Year and harvest festival.",
-            "time": "00:00 AM"
+            "timeFrom": "10:00",
+            "timeTo": "14:00"
         },
         {
             "id": 17,

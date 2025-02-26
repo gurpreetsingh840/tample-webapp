@@ -17,7 +17,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
     displayedMonths: string[] = [];
     currentMonth: string = '';
 
-    constructor(private eventsService: EventsService) { }
+    constructor(protected eventsService: EventsService) { }
 
     ngOnInit() {
         this.eventsService.getGroupedEvents().subscribe(({ groupedEvents, displayedMonths }) => {
