@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { EventData, EventsService, GroupedEvents } from './events.service';
 
@@ -9,13 +9,12 @@ import { EventData, EventsService, GroupedEvents } from './events.service';
     styleUrls: ['./events.component.css'],
     imports: [CommonModule, PageHeroComponent]
 })
-export class EventsComponent implements OnInit, AfterViewInit {
-    @ViewChild('timelineContainer') timelineContainer!: ElementRef;
-
+export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     events: EventData[] = [];
     groupedEvents: GroupedEvents = {};
     displayedMonths: string[] = [];
     currentMonth: string = '';
+    private observer: IntersectionObserver | null = null;
 
     constructor(protected eventsService: EventsService) { }
 
@@ -30,7 +29,35 @@ export class EventsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => {
             this.scrollToMonth(this.currentMonth);
+            this.setupIntersectionObserver();
         }, 100);
+    }
+
+    private setupIntersectionObserver() {
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                    const monthId = entry.target.id?.replace('month-', '').replace('-', ' ');
+                    if (monthId) {
+                        this.currentMonth = monthId;
+                    }
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '0% 0px -70% 0px'
+        });
+
+        // Observe all month sections
+        document.querySelectorAll('[id^="month-"]').forEach(
+            element => this.observer?.observe(element)
+        );
+    }
+
+    ngOnDestroy() {
+        if (this.observer) {
+            this.observer.disconnect();
+        }
     }
 
     getFormattedDate(dateString: string): string {
