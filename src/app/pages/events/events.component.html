@@ -4,7 +4,7 @@
 
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Month Navigation -->
-    <div class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
+    <div class="sticky top-0 bg-white dark:bg-gray-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-2 overflow-x-auto hide-scrollbar">
             <div class="flex space-x-4">
                 <button *ngFor="let month of displayedMonths" (click)="scrollToMonth(month)"
@@ -29,18 +29,68 @@
 
             <!-- Events List -->
             <div class="space-y-6">
-                <div *ngFor="let event of groupedEvents[month]"
-                    class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-1">
+                <div *ngFor="let event of groupedEvents[month]" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg">
                     <div class="p-6">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 relative">
                             <!-- Date Badge -->
-                            <div class="inline-flex items-center">
-                                <div class="bg-orange-500 text-white rounded-md text-center w-[60px]">
-                                    <div class="text-sm font-medium py-0.5 border-b border-orange-400">
+                            <div class="inline-flex flex-col items-center gap-3">
+                                <div class=" bg-orange-500 text-white rounded-md text-center w-[70px]">
+                                    <div class="text-sm font-medium py-1 border-b border-orange-400">
                                         {{ getMonthFromDate(event.date) }}
                                     </div>
-                                    <div class="text-sm font-bold py-0.5">
+                                    <div class="text-lg font-bold py-1">
                                         {{ getDayFromDate(event.date) }}
+                                    </div>
+                                </div>
+                                <!-- Calendar Options Dropdown moved here -->
+                                <div class="relative calendar-dropdown">
+                                    <!-- Backdrop overlay for mobile -->
+                                    <div *ngIf="event.showCalendarDropdown" (click)="toggleCalendarDropdown(event)"
+                                        class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-20 md:hidden"></div>
+
+                                    <button (click)="toggleCalendarDropdown(event)"
+                                        class="inline-flex items-center gap-1.5 text-orange-500 hover:text-orange-600 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-orange-900/20 border border-orange-200 dark:border-orange-800 relative">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm font-medium">Add</span>
+                                    </button>
+
+                                    <div *ngIf="event.showCalendarDropdown"
+                                        class="fixed bottom-0 left-0 right-0 z-30 md:absolute md:bottom-auto md:left-0 md:right-auto md:translate-y-2 bg-white dark:bg-gray-800 rounded-t-lg md:rounded-lg shadow-xl border dark:border-gray-700 md:w-56">
+                                        <div
+                                            class="sticky top-0 px-4 py-3 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Add to
+                                                Calendar</h3>
+                                            <button (click)="toggleCalendarDropdown(event)"
+                                                class="md:hidden text-gray-500 hover:text-gray-700">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="max-h-[50vh] overflow-y-auto md:max-h-none">
+                                            <a [href]="getCalendarLinks(event).google" target="_blank"
+                                                class="flex items-center gap-3 px-4 py-4 md:py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                                <img src="assets/icons/google-calendar.png" alt="Google Calendar"
+                                                    class="w-5 h-5">
+                                                Google Calendar
+                                            </a>
+                                            <a [href]="getCalendarLinks(event).outlook" target="_blank"
+                                                class="flex items-center gap-3 px-4 py-4 md:py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                                <img src="assets/icons/outlook.png" alt="Outlook" class="w-5 h-5">
+                                                Outlook Calendar
+                                            </a>
+                                            <a [href]="getCalendarLinks(event).ical" download="event.ics"
+                                                class="flex items-center gap-3 px-4 py-4 md:py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-b-lg">
+                                                <img src="assets/icons/apple-calendar.png" alt="Apple Calendar"
+                                                    class="w-5 h-5">
+                                                iPhone/iCal
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -80,19 +130,20 @@
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">{{ event.description }}</p>
 
                                 <!-- Location if available -->
-                                <div *ngIf="event.location"
-                                    class="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
-                                    <a [href]="getGoogleMapsUrl(event.location)" target="_blank"
-                                        class="inline-flex items-center gap-1 text-orange-500 hover:text-orange-600 group">
-                                        <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                        <span class="text-sm">Get directions to {{ event.location }}</span>
-                                    </a>
+                                <div class="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
+                                    <div *ngIf="event.location">
+                                        <a [href]="getGoogleMapsUrl(event.location)" target="_blank"
+                                            class="inline-flex items-center gap-1 text-orange-500 hover:text-orange-600 group">
+                                            <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            <span class="text-sm">Get directions to {{ event.location }}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

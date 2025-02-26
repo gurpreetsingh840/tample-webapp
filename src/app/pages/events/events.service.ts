@@ -16,6 +16,7 @@ export interface EventData {
     timeTo?: string;
     showFullDescription?: boolean;
     location?: string;
+    showCalendarDropdown?: boolean;  // Add this line
 }
 
 export interface GroupedEvents {
@@ -126,5 +127,52 @@ export class EventsService {
         } catch {
             return time;
         }
+    }
+
+    generateCalendarLinks(event: EventData) {
+        const startDate = this.parseDate(event.date);
+        const endDate = new Date(startDate);
+
+        if (event.timeFrom) {
+            const [hours, minutes] = event.timeFrom.split(':');
+            startDate.setHours(parseInt(hours), parseInt(minutes));
+        }
+
+        if (event.timeTo) {
+            const [hours, minutes] = event.timeTo.split(':');
+            endDate.setHours(parseInt(hours), parseInt(minutes));
+        } else {
+            endDate.setHours(startDate.getHours() + 1); // Default 1 hour duration
+        }
+
+        const title = encodeURIComponent(event.name);
+        const description = encodeURIComponent(event.description);
+        const location = event.location ? encodeURIComponent(event.location) : '';
+
+        // Format dates for calendar links
+        const start = startDate.toISOString().replace(/-|:|\.\d+/g, '');
+        const end = endDate.toISOString().replace(/-|:|\.\d+/g, '');
+
+        return {
+            google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${description}&location=${location}`,
+            outlook: `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}&body=${description}&location=${location}`,
+            ical: this.generateICalendarFile(event, startDate, endDate)
+        };
+    }
+
+    private generateICalendarFile(event: EventData, start: Date, end: Date): string {
+        const icalContent =
+            `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${event.name}
+DTSTART:${start.toISOString().replace(/-|:|\.\d+/g, '')}
+DTEND:${end.toISOString().replace(/-|:|\.\d+/g, '')}
+DESCRIPTION:${event.description}
+${event.location ? `LOCATION:${event.location}` : ''}
+END:VEVENT
+END:VCALENDAR`;
+
+        return 'data:text/calendar;charset=utf8,' + encodeURIComponent(icalContent);
     }
 }
