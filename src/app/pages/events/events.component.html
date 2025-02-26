@@ -47,13 +47,40 @@
 
                             <!-- Event Details -->
                             <div class="flex-grow pl-4">
+                                <!-- Title -->
                                 <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
                                     {{ event.name }}
                                 </h3>
-                                <p class="text-gray-600 dark:text-gray-300">{{ event.description }}</p>
-                                <p *ngIf="event.showDateVariationWarning" class="text-sm text-orange-500 mt-2">
-                                    Note: Date may vary based on the Nanaksahi Calendar and lunar calculations.
-                                </p>
+
+                                <!-- Date Warning if applicable -->
+                                <div *ngIf="event.showDateVariationWarning"
+                                    class="flex items-center gap-1 text-sm text-orange-500 mb-3 bg-orange-50 dark:bg-orange-900/20 px-3 py-2 rounded-md">
+                                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                    <span>Date may vary based on the Nanaksahi Calendar and lunar calculations.</span>
+                                </div>
+
+                                <!-- Description -->
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ event.description }}</p>
+
+                                <!-- Location if available -->
+                                <div *ngIf="event.location"
+                                    class="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
+                                    <a [href]="getGoogleMapsUrl(event.location)" target="_blank"
+                                        class="inline-flex items-center gap-1 text-orange-500 hover:text-orange-600 group">
+                                        <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <span class="text-sm">Get directions to {{ event.location }}</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

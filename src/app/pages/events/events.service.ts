@@ -14,6 +14,7 @@ export interface EventData {
     description: string;
     time?: string;
     showFullDescription?: boolean;
+    location?: string;
 }
 
 export interface GroupedEvents {
@@ -100,5 +101,10 @@ export class EventsService {
     getDayFromDate(dateString: string): string {
         const date = this.parseDate(dateString);
         return date.getDate().toString().padStart(2, '0');
+    }
+
+    getGoogleMapsUrl(location: string): string {
+        // Creates a Google Maps URL that opens directions from current location
+        return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location)}&travelmode=driving`;
     }
 }

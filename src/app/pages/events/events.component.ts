@@ -62,5 +62,9 @@ export class EventsComponent implements OnInit, AfterViewInit {
             });
         }
     }
+
+    getGoogleMapsUrl(location: string): string {
+        return this.eventsService.getGoogleMapsUrl(location);
+    }
 }
 
