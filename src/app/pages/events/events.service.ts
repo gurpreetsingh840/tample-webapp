@@ -11,7 +11,7 @@ export interface EventData {
     name: string;
     date: string;
     showDateVariationWarning?: boolean;
-    description: string;
+    desc: string;
     timeFrom?: string;
     timeTo?: string;
     showFullDescription?: boolean;
@@ -146,7 +146,7 @@ export class EventsService {
         }
 
         const title = encodeURIComponent(event.name);
-        const description = encodeURIComponent(event.description);
+        const description = encodeURIComponent(event.desc);
         const location = event.location ? encodeURIComponent(event.location) : '';
 
         // Format dates for calendar links
@@ -168,7 +168,7 @@ BEGIN:VEVENT
 SUMMARY:${event.name}
 DTSTART:${start.toISOString().replace(/-|:|\.\d+/g, '')}
 DTEND:${end.toISOString().replace(/-|:|\.\d+/g, '')}
-DESCRIPTION:${event.description}
+DESCRIPTION:${event.desc}
 ${event.location ? `LOCATION:${event.location}` : ''}
 END:VEVENT
 END:VCALENDAR`;

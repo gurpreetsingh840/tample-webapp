@@ -19,7 +19,7 @@ module.exports = {
           600: '#ea580c',
           700: '#c2410c',
           800: '#9a3412',
-          900: '#7c2d12',
+          900: '#7c2d12'
         },
         // Background colors
         background: {
