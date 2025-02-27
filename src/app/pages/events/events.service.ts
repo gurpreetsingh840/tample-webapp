@@ -16,7 +16,8 @@ export interface EventData {
     timeTo?: string;
     showFullDescription?: boolean;
     location?: string;
-    showCalendarDropdown?: boolean;  // Add this line
+    showCalendarDropdown?: boolean;
+    isExpanded?: boolean;
 }
 
 export interface GroupedEvents {

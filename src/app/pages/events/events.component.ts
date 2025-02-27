@@ -17,6 +17,9 @@ export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     currentYear: string = new Date().getFullYear().toString();
     private observer: IntersectionObserver | null = null;
 
+    readonly CHAR_LIMIT = 250;
+    readonly MOBILE_CHAR_LIMIT = 150;
+
     constructor(protected eventsService: EventsService) { }
 
     ngOnInit() {
@@ -122,6 +125,25 @@ export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
 
     getCalendarLinks(event: EventData) {
         return this.eventsService.generateCalendarLinks(event);
+    }
+
+    shouldTruncate(text: string): boolean {
+        const limit = this.isMobileView() ? this.MOBILE_CHAR_LIMIT : this.CHAR_LIMIT;
+        return text.length > limit;
+    }
+
+    getTruncatedText(text: string): string {
+        const limit = this.isMobileView() ? this.MOBILE_CHAR_LIMIT : this.CHAR_LIMIT;
+        if (text.length <= limit) return text;
+        return text.slice(0, limit) + '...';
+    }
+
+    toggleExpand(event: EventData): void {
+        event.isExpanded = !event.isExpanded;
+    }
+
+    private isMobileView(): boolean {
+        return window.innerWidth < 768; // md breakpoint in Tailwind
     }
 }
 

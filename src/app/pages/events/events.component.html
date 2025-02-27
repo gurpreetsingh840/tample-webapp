@@ -124,7 +124,16 @@
                                 </div>
 
                                 <!-- Description -->
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ event.desc }}</p>
+                                <div class="text-gray-600 dark:text-gray-300 mb-4">
+                                    <p *ngIf="!shouldTruncate(event.desc)">{{ event.desc }}</p>
+                                    <p *ngIf="shouldTruncate(event.desc)">
+                                        {{ event.isExpanded ? event.desc : getTruncatedText(event.desc) }}
+                                        <button (click)="toggleExpand(event)"
+                                            class="inline-flex items-center text-orange-500 hover:text-orange-600 text-sm font-medium ml-1 focus:outline-none focus:underline">
+                                            {{ event.isExpanded ? 'Read Less' : 'Read More' }}
+                                        </button>
+                                    </p>
+                                </div>
 
                                 <!-- Location if available -->
                                 <div class="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
