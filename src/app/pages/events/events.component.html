@@ -4,7 +4,7 @@
 
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Floating Month Navigation -->
-    <div class="fixed right-4 top-1/2 -translate-y-1/2 z-50">
+    <div class="fixed right-4 top-1/2 -translate-y-1/2 z-10">
         <div class="flex flex-col gap-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2">
             <button *ngFor="let month of displayedMonths" (click)="scrollToMonth(month)"
                 [class.bg-orange-500]="currentMonth === month" [class.text-white]="currentMonth === month" class="p-2 rounded-md text-sm font-medium transition-all hover:bg-orange-100 dark:hover:bg-orange-900/20
