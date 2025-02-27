@@ -50,9 +50,17 @@ export class EventsService {
     }
 
     private groupEventsByMonth(events: EventData[]) {
-        const groupedEvents = events.reduce((groups, event) => {
+        const currentYear = new Date().getFullYear();
+
+        // Filter events for current year only
+        const currentYearEvents = events.filter(event => {
+            const eventYear = this.parseDate(event.date).getFullYear();
+            return eventYear === currentYear;
+        });
+
+        const groupedEvents = currentYearEvents.reduce((groups, event) => {
             const date = this.parseDate(event.date);
-            const month = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+            const month = date.toLocaleString('default', { month: 'long' });
             if (!groups[month]) {
                 groups[month] = [];
             }
@@ -62,9 +70,9 @@ export class EventsService {
 
         // Sort months chronologically
         const displayedMonths = Object.keys(groupedEvents).sort((a, b) => {
-            const dateA = this.parseDate(groupedEvents[a][0].date);
-            const dateB = this.parseDate(groupedEvents[b][0].date);
-            return dateA.getTime() - dateB.getTime();
+            const monthA = new Date(Date.parse(`${a} 1, ${currentYear}`));
+            const monthB = new Date(Date.parse(`${b} 1, ${currentYear}`));
+            return monthA.getTime() - monthB.getTime();
         });
 
         // Sort events within each month
@@ -81,7 +89,7 @@ export class EventsService {
 
     getCurrentMonth(): string {
         const now = new Date();
-        return now.toLocaleString('default', { month: 'long', year: 'numeric' });
+        return now.toLocaleString('default', { month: 'long' });  // Remove year from display
     }
 
     formatDate(dateString: string): string {

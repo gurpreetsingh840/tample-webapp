@@ -14,6 +14,7 @@ export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     groupedEvents: GroupedEvents = {};
     displayedMonths: string[] = [];
     currentMonth: string = '';
+    currentYear: string = new Date().getFullYear().toString();
     private observer: IntersectionObserver | null = null;
 
     constructor(protected eventsService: EventsService) { }
