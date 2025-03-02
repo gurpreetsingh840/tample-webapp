@@ -41,7 +41,7 @@ export class ImageGalleryComponent implements OnInit {
 
   ngOnInit(): void {
     const imagesFolder = 'assets/images';
-    const imageCount = 12;
+    const imageCount = 24;
 
     for (let i = 1; i <= imageCount; i++) {
       this.images.push({
