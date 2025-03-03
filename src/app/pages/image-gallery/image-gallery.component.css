@@ -5,7 +5,7 @@
 /* Wrapper Around the Entire Gallery */
 /* Gallery Wrapper - Now it Pops! */
 .gallery-container {
-    @apply w-full max-w-[1200px] mx-auto p-6 rounded-xl shadow-lg dark:shadow-gray-800 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 backdrop-blur-md bg-opacity-90 dark:bg-opacity-80 transition-all duration-500 ease-in-out;
+    @apply w-full max-w-[1400px] mx-auto p-6 rounded-xl shadow-lg dark:shadow-gray-800 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 backdrop-blur-md bg-opacity-90 dark:bg-opacity-80 transition-all duration-500 ease-in-out;
 }
 
 /* Dark Mode Enhancements */
