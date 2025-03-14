@@ -118,6 +118,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Remove initial loader
+    const loader = document.getElementById('initial-loader');
+    if (loader) {
+      loader.classList.add('loader-hidden');
+      setTimeout(() => loader.remove(), 300); // Remove after fade out
+    }
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.isNavigating = true;

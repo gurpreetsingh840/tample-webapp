@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
+import { PageLoaderComponent } from '../../shared/components/page-loader/page-loader.component';
 import { EventData, EventsService, GroupedEvents } from './events.service';
 
 @Component({
     selector: 'app-events',
     templateUrl: './events.component.html',
     styleUrls: ['./events.component.css'],
-    imports: [CommonModule, PageHeroComponent]
+    imports: [CommonModule, PageHeroComponent, PageLoaderComponent],
+    standalone: true
 })
 export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     events: EventData[] = [];
@@ -16,6 +18,7 @@ export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     currentMonth: string = '';
     currentYear: string = new Date().getFullYear().toString();
     private observer: IntersectionObserver | null = null;
+    isLoading = true;
 
     readonly CHAR_LIMIT = 250;
     readonly MOBILE_CHAR_LIMIT = 150;
@@ -23,10 +26,16 @@ export class EventsComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(protected eventsService: EventsService) { }
 
     ngOnInit() {
-        this.eventsService.getGroupedEvents().subscribe(({ groupedEvents, displayedMonths }) => {
-            this.groupedEvents = groupedEvents;
-            this.displayedMonths = displayedMonths;
-            this.currentMonth = this.eventsService.getCurrentMonth();
+        this.eventsService.getGroupedEvents().subscribe({
+            next: ({ groupedEvents, displayedMonths }) => {
+                this.groupedEvents = groupedEvents;
+                this.displayedMonths = displayedMonths;
+                this.currentMonth = this.eventsService.getCurrentMonth();
+                this.isLoading = false;
+            },
+            error: () => {
+                this.isLoading = false;
+            }
         });
     }
 
