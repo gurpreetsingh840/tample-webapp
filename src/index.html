@@ -52,8 +52,14 @@
       z-index: 9999;
     }
 
-    .dark #initial-loader {
-      background: #1a1a1a;
+    @media (prefers-color-scheme: dark) {
+      #initial-loader {
+        background: #1a1a1a;
+      }
+
+      .dot {
+        background: #f59e0b;
+      }
     }
 
     .geometric-loader {
@@ -98,6 +104,27 @@
       transition: opacity 0.3s ease-out;
     }
   </style>
+  <script>
+    // Wait for the main Angular styles file to load
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.tagName === 'LINK' && node.href && node.href.match(/styles\.[a-f0-9]+\.css$/)) {
+            node.onload = () => {
+              document.documentElement.classList.add('css-loaded');
+            };
+          }
+        });
+      });
+    });
+
+    observer.observe(document.head, { childList: true });
+
+    // Add app-ready class when Angular app is bootstrapped
+    window.onload = () => {
+      document.documentElement.classList.add('app-ready');
+    };
+  </script>
 </head>
 
 <body>

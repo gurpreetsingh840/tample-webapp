@@ -118,47 +118,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Check if all CSS is loaded
-    const checkCSSLoaded = () => {
-      return Array.from(document.styleSheets).every(sheet => {
-        try {
-          return sheet.cssRules !== null;
-        } catch (e) {
-          return false;
-        }
-      });
-    };
-
-    const markReady = () => {
-      document.body.classList.add('css-loaded');
-      document.body.classList.add('app-ready');
-
-      // Cleanup loader after transition
-      setTimeout(() => {
-        const loader = document.getElementById('initial-loader');
-        if (loader) loader.remove();
-      }, 400);
-    };
-
-    // Check CSS loading status
-    if (checkCSSLoaded()) {
-      markReady();
-    } else {
-      const checkInterval = setInterval(() => {
-        if (checkCSSLoaded()) {
-          clearInterval(checkInterval);
-          markReady();
-        }
-      }, 50);
-    }
-
-    setTimeout(() => {
-      const loader = document.getElementById('initial-loader');
-      if (loader) {
-        loader.remove();
-      }
-    }, 1000); // Give extra time for styles to load
-
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.isNavigating = true;
