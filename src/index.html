@@ -38,7 +38,7 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
+  <style id="critical-loader">
     #initial-loader {
       position: fixed;
       top: 0;
@@ -50,8 +50,6 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: opacity 0.3s ease-out;
-      backdrop-filter: blur(1px);
     }
 
     .dark #initial-loader {
@@ -93,18 +91,13 @@
       }
     }
 
-    .loader-hidden {
+    /* This class will be added when CSS is loaded */
+    .css-loaded.app-ready #initial-loader {
       opacity: 0;
       pointer-events: none;
+      transition: opacity 0.3s ease-out;
     }
   </style>
-  <script>
-    const path = localStorage.getItem('path');
-    if (path) {
-      localStorage.removeItem('path');
-      window.history.replaceState(null, null, path);
-    }
-  </script>
 </head>
 
 <body>
