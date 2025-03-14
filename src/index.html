@@ -105,25 +105,35 @@
     }
   </style>
   <script>
-    // Wait for the main Angular styles file to load
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node.tagName === 'LINK' && node.href && node.href.match(/styles\.[a-f0-9]+\.css$/)) {
-            node.onload = () => {
-              document.documentElement.classList.add('css-loaded');
-            };
-          }
-        });
+    // More reliable way to detect Angular bootstrap and styles loading
+    function removeLoader() {
+      document.documentElement.classList.add('css-loaded', 'app-ready');
+      setTimeout(() => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) loader.remove();
+      }, 300);
+    }
+
+    // Check if styles are already present (production build case)
+    if (document.querySelectorAll('style[ng-app-id]').length > 0) {
+      removeLoader();
+    } else {
+      // Watch for dynamic style injection (development case)
+      const observer = new MutationObserver((mutations) => {
+        if (document.querySelectorAll('style[ng-app-id]').length > 0) {
+          removeLoader();
+          observer.disconnect();
+        }
       });
-    });
 
-    observer.observe(document.head, { childList: true });
+      observer.observe(document.head, { childList: true });
+    }
 
-    // Add app-ready class when Angular app is bootstrapped
-    window.onload = () => {
-      document.documentElement.classList.add('app-ready');
-    };
+    // Fallback cleanup after 2s in case something goes wrong
+    setTimeout(() => {
+      const loader = document.getElementById('initial-loader');
+      if (loader) loader.remove();
+    }, 2000);
   </script>
 </head>
 
