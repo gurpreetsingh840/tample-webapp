@@ -1,0 +1,6 @@
+{
+    "donation": {
+        "enabled": true,
+        "paypalLink": "https://www.paypal.com/donate"
+    }
+}
