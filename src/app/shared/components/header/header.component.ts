@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Event, NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Banner, BannerService } from '../../services/banner.service';
+import { BannerComponent } from '../banner/banner.component';
 import { ContactInfoComponent } from '../contact-info/contact-info.component';
 
 interface MenuItem {
@@ -19,7 +21,8 @@ interface MenuItem {
     CommonModule,
     RouterLink,
     RouterLinkActive,
-    ContactInfoComponent
+    ContactInfoComponent,
+    BannerComponent
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
@@ -50,10 +53,10 @@ export class HeaderComponent implements OnInit {
     { path: '/contact', label: 'Contact' }
   ];
 
-
   isMenuOpen = false;
+  banners: Banner[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private bannerService: BannerService) { }
 
   ngOnInit() {
     this.router.events.pipe(
@@ -61,6 +64,10 @@ export class HeaderComponent implements OnInit {
     ).subscribe(() => {
       window.scrollTo(0, 0);
       this.isMenuOpen = false;
+    });
+
+    this.bannerService.getBanners().subscribe(banners => {
+      this.banners = banners;
     });
   }
 

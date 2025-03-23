@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-gray-100 dark:bg-gray-800 shadow-md">
+<header class="fixed left-0 right-0 z-40 bg-gray-100 dark:bg-gray-800 shadow-md top-0">
   <nav class="container mx-auto px-4">
     <div class="flex justify-between items-center h-20">
       <!-- Logo -->
@@ -22,23 +22,25 @@
               class="absolute bottom-1.5 left-4 right-4 h-0.5 bg-orange-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
           </a>
 
-          <button *ngIf="item.children" [routerLink]="item.path" class="group px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 
+          <div *ngIf="item.children" class="relative">
+            <button [routerLink]="item.path" class="group px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-500 
                        flex items-center relative">
-            {{ item.label }}
-            <i class="fa-solid fa-chevron-down ml-1 text-sm"></i>
-            <span
-              class="absolute bottom-1.5 left-4 right-4 h-0.5 bg-orange-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-          </button>
+              {{ item.label }}
+              <i class="fa-solid fa-chevron-down ml-1 text-sm"></i>
+              <span
+                class="absolute bottom-1.5 left-4 right-4 h-0.5 bg-orange-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </button>
 
-          <!-- Submenu -->
-          <div *ngIf="item.children" class="absolute left-0 mt-1 w-64 bg-gray-100 dark:bg-gray-800 rounded-md shadow-lg py-1
-                      transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-                      transition-all duration-200 origin-top-left z-50">
-            <button *ngFor="let child of item.children" (click)="navigateWithFragment(child.path)" class="block w-full text-left px-4 py-2 text-sm text-gray-600 dark:text-gray-300 
+            <!-- Submenu with improved positioning -->
+            <div class="absolute left-0 top-full mt-1 w-64 bg-gray-100 dark:bg-gray-800 rounded-md shadow-lg py-1
+                        invisible group-hover:visible opacity-0 group-hover:opacity-100
+                        transition-all duration-200 z-50">
+              <button *ngFor="let child of item.children" (click)="navigateWithFragment(child.path)" class="block w-full text-left px-4 py-2 text-sm text-gray-600 dark:text-gray-300 
                            hover:text-orange-600 dark:hover:text-orange-500
                            hover:bg-orange-50 dark:hover:bg-gray-700">
-              {{ child.label }}
-            </button>
+                {{ child.label }}
+              </button>
+            </div>
           </div>
         </div>
         <app-contact-info [showAddress]="false" [showPhone]="false" [showEmail]="false" class="group relative mr-6" />
@@ -112,6 +114,8 @@
     </div>
   </nav>
 </header>
+
+<app-banner />
 
 <!-- Spacer to prevent content from going under fixed header -->
 <div class="h-20"></div>
