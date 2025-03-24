@@ -1,0 +1,12 @@
+{
+    "banners": [
+        {
+            "id": "spring-2024",
+            "type": "info",
+            "message": "Join us for Vaisakhi celebrations this April!",
+            "link": "/events",
+            "startDate": "2025-03-15",
+            "endDate": "2025-04-30"
+        }
+    ]
+}
