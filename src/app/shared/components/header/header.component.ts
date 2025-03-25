@@ -77,6 +77,7 @@ export class HeaderComponent implements OnInit {
 
   onToggleDarkMode() {
     this.toggleDarkMode.emit();
+    this.isMenuOpen = false;
   }
 
   navigateWithFragment(path: string) {
