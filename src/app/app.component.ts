@@ -1,7 +1,9 @@
 // src/app/app.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, HostListener, OnInit, effect, signal } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 
@@ -111,13 +113,16 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private titleService: Title
+  ) {
     effect(() => {
       window.localStorage.setItem('darkMode', JSON.stringify(this.darkMode()));
     });
   }
 
   ngOnInit() {
+    // Handle navigation animations
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.isNavigating = true;
@@ -128,6 +133,23 @@ export class AppComponent implements OnInit {
         }, 300); // Match the animation duration
       }
     });
+
+    // Handle title updates
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const rt = this.getChild(this.router.routerState.root);
+      const title = rt?.title || 'Gurdwara Singh Sabha Richmond';
+      this.titleService.setTitle(title);
+    });
+  }
+
+  // Helper method to get the child route
+  private getChild(route: any): any {
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route.snapshot.data;
   }
 
   toggleDarkMode() {
