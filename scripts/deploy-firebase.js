@@ -80,8 +80,6 @@ async function deployToFirebase() {
         // Replace Firebase config values
         replaceFirebaseConfig();
 
-        return;
-
         // Deploy to Firebase
         console.log('🚀 Deploying to Firebase...');
         executeCommand('firebase deploy --only hosting');

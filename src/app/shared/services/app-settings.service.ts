@@ -12,6 +12,14 @@ export interface AppSettings {
         dismissTimeoutSeconds: number;
         dataUrl: string;
     };
+    firebase: {
+        apiKey: string;
+        authDomain: string;
+        projectId: string;
+        storageBucket: string;
+        messagingSenderId: string;
+        appId: string;
+    };
 }
 
 @Injectable({
@@ -46,5 +54,13 @@ export class AppSettingsService {
     getDonationSettings(): Observable<AppSettings['donation'] | null> {
         return this.settings$.asObservable()
             .pipe(map(settings => settings?.donation ?? null));
+    }
+
+    /**
+     * Get Firebase configuration object
+     * @returns Firebase configuration object or null if not available
+     */
+    getFirebaseConfig(): AppSettings['firebase'] | null {
+        return this.settings$.value?.firebase ?? null;
     }
 }
