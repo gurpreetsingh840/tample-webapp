@@ -68,8 +68,8 @@ async function deployToFirebase() {
         // Git commands
         if (shouldCommit) {
             console.log('📝 Preparing git changes...');
-            // Discard changes in docs folder
-            execSync('git checkout -- docs/', { stdio: 'inherit' });
+            // Discard changes in docs folder if we bring back GitHub Pages
+            // execSync('git checkout -- docs/', { stdio: 'inherit' });
             // Stage and commit remaining changes
             execSync('git add .', { stdio: 'inherit' });
             execSync(`git commit -m "Deploy Firebase v${newVersion} - ${timestamp}"`, { stdio: 'inherit' });

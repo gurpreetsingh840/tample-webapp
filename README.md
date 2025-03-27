@@ -37,7 +37,7 @@ ng build
 ```
 
 ## Live Demo
-Visit: https://gurpreetsingh840.github.io/temple-webapp/
+Visit: https://ricgurudwara.org/
 
 ## Contributing
 We welcome contributions to improve this Gurdwara website template! Here's how you can help:
