@@ -14,6 +14,30 @@ function executeCommand(command) {
     }
 }
 
+function replaceFirebaseConfig() {
+    const localConfigPath = path.join(__dirname, '../public/assets/config/app-settings.local.json');
+    const buildConfigPath = path.join(__dirname, '../docs/assets/config/app-settings.json');
+
+    try {
+        // Read local config with actual values
+        const localConfig = JSON.parse(fs.readFileSync(localConfigPath, 'utf8'));
+
+        // Read the built config file
+        const buildConfig = JSON.parse(fs.readFileSync(buildConfigPath, 'utf8'));
+
+        // Replace firebase config values
+        buildConfig.firebase = localConfig.firebase;
+
+        // Write back the updated config
+        fs.writeFileSync(buildConfigPath, JSON.stringify(buildConfig, null, 2));
+
+        console.log('Firebase configuration successfully updated');
+    } catch (error) {
+        console.error('Error updating Firebase configuration:', error);
+        process.exit(1);
+    }
+}
+
 async function deployToFirebase() {
     try {
         // Read and update version
@@ -52,6 +76,11 @@ async function deployToFirebase() {
             console.log('📝 Please login to Firebase...');
             executeCommand('firebase login');
         }
+
+        // Replace Firebase config values
+        replaceFirebaseConfig();
+
+        return;
 
         // Deploy to Firebase
         console.log('🚀 Deploying to Firebase...');

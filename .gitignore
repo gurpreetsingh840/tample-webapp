@@ -37,3 +37,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Firebase local config put real values in this file
+/public/assets/config/app-settings.local.json
