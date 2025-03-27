@@ -20,6 +20,7 @@
 
 # IDE - VSCod
 .vscode/*
+docs/*
 
 
 # Misc
