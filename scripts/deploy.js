@@ -1,3 +1,5 @@
+// Genrate docs folder for GitHub pages
+// Run: node scripts/deploy.js
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');

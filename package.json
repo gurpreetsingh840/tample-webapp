@@ -11,11 +11,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postbuild": "node scripts/postbuild.js",
-    "deploy": "node scripts/deploy.js",
+    "deploy:gitpages": "node scripts/deploy.js",
     "lint": "eslint \"src/**/*.{ts,html}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,html,css,scss}\"",
     "deploy:firebase": "node scripts/deploy-firebase.js",
-    "deploy:all": "npm run deploy:firebase -- --no-commit && npm run deploy -- --no-version"
+    "deploy:all-opt": "npm run deploy:firebase -- --no-commit && npm run deploy -- --no-version",
+    "deploy:all": "npm run deploy:firebase"
   },
   "private": true,
   "dependencies": {
