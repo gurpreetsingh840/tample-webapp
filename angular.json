@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tample-webapp": {
+    "temple-webapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -86,10 +86,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tample-webapp:build:production"
+              "buildTarget": "temple-webapp:build:production"
             },
             "development": {
-              "buildTarget": "tample-webapp:build:development"
+              "buildTarget": "temple-webapp:build:development"
             }
           },
           "defaultConfiguration": "development"
