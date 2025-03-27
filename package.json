@@ -1,5 +1,5 @@
 {
-  "name": "tample-webapp",
+  "name": "temple-webapp",
   "version": "0.0.51",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "npm run build:dev",
     "build:dev": "ng build",
     "build:prod": "ng build --configuration production && npm run postbuild",
-    "build:prod:git": "ng build --configuration=production --base-href=/tample-webapp/ && npm run postbuild",
+    "build:prod:git": "ng build --configuration=production --base-href=/temple-webapp/ && npm run postbuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postbuild": "node scripts/postbuild.js",
