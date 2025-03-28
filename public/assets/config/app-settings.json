@@ -9,12 +9,12 @@
         "dataUrl": "/assets/data/banners.json"
     },
     "firebase": {
-        "apiKey": "AIzaSyCYsCeeExRWBaTu5e9qt_oqrdHZvc__Ny4",
-        "authDomain": "tample-webapp.firebaseapp.com",
-        "projectId": "tample-webapp",
-        "storageBucket": "tample-webapp.firebasestorage.app",
-        "messagingSenderId": "1079933305594",
-        "appId": "1:1079933305594:web:125be2c3d1cc99e0083f43",
-        "measurementId": "G-GTTZJW7SP9"
+        "apiKey": "YOUR_API_KEY",
+        "authDomain": "YOUR_AUTH_DOMAIN",
+        "projectId": "YOUR_PROJECT_ID",
+        "storageBucket": "YOUR_STORAGE_BUCKET",
+        "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
+        "appId": "YOUR_APP_ID",
+        "measurementId": "YOUR_MEASUREMENT_ID"
     }
 }
