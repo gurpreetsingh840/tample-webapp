@@ -23,8 +23,7 @@ export class FooterComponent {
 
   trackGitHubClick(): void {
     this.analyticsService.trackEvent(AnalyticsEvent.GITHUB_LINK_CLICK, {
-      location: 'footer',
-      url: 'https://github.com/gurpreetsingh840/temple-webapp'
+      location: 'footer'
     });
   }
 }

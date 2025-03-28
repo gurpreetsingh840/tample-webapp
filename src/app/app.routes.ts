@@ -11,7 +11,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { title: `${TEMPLE_NAME} - Sikh Temple VA` }
+    data: { title: `${TEMPLE_NAME}` }
   },
   {
     path: 'about',

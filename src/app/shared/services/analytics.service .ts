@@ -32,9 +32,7 @@ export class AnalyticsService {
     trackPageView(pageName: string, title?: string) {
         const analytics = this.getAnalyticsInstance();
         if (!analytics) {
-            if (isDevMode()) {
-                console.warn('Analytics not initialized. Cannot log page view.');
-            }
+
             return;
         }
         logEvent(analytics, AnalyticsEvent.PAGE_VIEW, { page_name: pageName, page_title: title });
@@ -52,9 +50,6 @@ export class AnalyticsService {
     trackEvent(eventName: string, params?: Record<string, any>) {
         const analytics = this.getAnalyticsInstance();
         if (!analytics) {
-            if (isDevMode()) {
-                console.warn(`Analytics not initialized. Cannot log event: ${eventName}`);
-            }
             return;
         }
         logEvent(analytics, eventName, params);
@@ -72,9 +67,6 @@ export class AnalyticsService {
     trackError(error: string, context?: Record<string, any>) {
         const analytics = this.getAnalyticsInstance();
         if (!analytics) {
-            if (isDevMode()) {
-                console.warn('Analytics not initialized. Cannot log error.');
-            }
             return;
         }
         logEvent(analytics, AnalyticsEvent.EXCEPTION, {
