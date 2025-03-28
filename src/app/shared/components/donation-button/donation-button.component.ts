@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DonationSettings } from '../../models/app-settings.model';
 import { AppSettingsService } from '../../services/app-settings.service';
 
@@ -15,7 +14,7 @@ export class DonationButtonComponent {
     @Input() buttonClass = '';
     @Input() context: 'default' | 'contact' | 'footer' = 'default';
     @Input() showTitle = true;
-    donationSettings$: Observable<DonationSettings | null>;
+    donationSettings: DonationSettings;
 
     supportMessages = {
         default: {
@@ -35,7 +34,7 @@ export class DonationButtonComponent {
     contactMessage = "For donations and contributions, please contact our management team. We'll be happy to assist you with the process.";
 
     constructor(private appSettings: AppSettingsService) {
-        this.donationSettings$ = this.appSettings.getDonationSettings();
+        this.donationSettings = this.appSettings.getDonationSettings();
     }
 
     getSupportMessage() {

@@ -5,26 +5,28 @@ import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImageGalleryComponent } from './pages/image-gallery/image-gallery.component';
 
+const TEMPLE_NAME = 'Gurdwara Singh Sabha Richmond';
+
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Gurdwara Singh Sabha Richmond - Sikh Temple VA'
+    data: { title: `${TEMPLE_NAME} - Sikh Temple VA` }
   },
   {
     path: 'about',
     component: AboutComponent,
-    title: 'About Us - Gurdwara Singh Sabha Richmond'
+    data: { title: `About Us - ${TEMPLE_NAME}` }
   },
   {
     path: 'gallery',
     component: ImageGalleryComponent,
-    title: 'Photo Gallery - Gurdwara Singh Sabha Richmond'
+    data: { title: `Photo Gallery - ${TEMPLE_NAME}` }
   },
   {
     path: 'events',
     component: EventsComponent,
-    title: 'Events & Programs - Gurdwara Singh Sabha Richmond'
+    data: { title: `Events & Programs - ${TEMPLE_NAME}` }
   },
   {
     path: 'services',
@@ -33,43 +35,43 @@ export const routes: Routes = [
         path: 'weekly-programs',
         loadComponent: () => import('./pages/weekly-programs/weekly-programs.component')
           .then(m => m.WeeklyProgramsComponent),
-        title: 'Weekly Programs - Gurdwara Singh Sabha Richmond'
+        data: { title: `Weekly Programs - ${TEMPLE_NAME}` }
       },
       {
         path: 'religious-services',
         loadComponent: () => import('./pages/religious-services/religious-services.component')
           .then(m => m.ReligiousServicesComponent),
-        title: 'Religious Services - Gurdwara Singh Sabha Richmond'
+        data: { title: `Religious Services - ${TEMPLE_NAME}` }
       },
       {
         path: 'akhand-path',
         loadComponent: () => import('./pages/akhand-path/akhand-path.component')
           .then(m => m.AkhandPathComponent),
-        title: 'Akhand Path - Gurdwara Singh Sabha Richmond'
+        data: { title: `Akhand Path - ${TEMPLE_NAME}` }
       },
       {
         path: 'sehaj-path',
         loadComponent: () => import('./pages/sehaj-path/sehaj-path.component')
           .then(m => m.SehajPathComponent),
-        title: 'Sehaj Path - Gurdwara Singh Sabha Richmond'
+        data: { title: `Sehaj Path - ${TEMPLE_NAME}` }
       },
       {
         path: 'sukhmani-sahib',
         loadComponent: () => import('./pages/sukhmani-sahib/sukhmani-sahib.component')
           .then(m => m.SukhmaniSahibComponent),
-        title: 'Sukhmani Sahib - Gurdwara Singh Sabha Richmond'
+        data: { title: `Sukhmani Sahib - ${TEMPLE_NAME}` }
       },
       {
         path: 'anand-karaj',
         loadComponent: () => import('./pages/anand-karaj/anand-karaj.component')
           .then(m => m.AnandKarajComponent),
-        title: 'Anand Karaj - Gurdwara Singh Sabha Richmond'
+        data: { title: `Anand Karaj - ${TEMPLE_NAME}` }
       },
       {
         path: 'antim-ardas-ceremony',
         loadComponent: () => import('./pages/antim-ardas-ceremony/antim-ardas-ceremony.component')
           .then(m => m.AntimArdasCeremonyComponent),
-        title: 'Antim Ardas Ceremony - Gurdwara Singh Sabha Richmond'
+        data: { title: `Antim Ardas Ceremony - ${TEMPLE_NAME}` }
       },
     ]
   },
@@ -77,6 +79,6 @@ export const routes: Routes = [
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact.component')
       .then(m => m.ContactComponent),
-    title: 'Contact Us - Gurdwara Singh Sabha Richmond'
+    data: { title: `Contact Us - ${TEMPLE_NAME}` }
   },
 ];

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, firstValueFrom, map } from 'rxjs';
+import { FirebaseOptions } from 'firebase/app';
+import { firstValueFrom } from 'rxjs';
 
 export interface AppSettings {
     donation: {
@@ -12,55 +13,51 @@ export interface AppSettings {
         dismissTimeoutSeconds: number;
         dataUrl: string;
     };
-    firebase: {
-        apiKey: string;
-        authDomain: string;
-        projectId: string;
-        storageBucket: string;
-        messagingSenderId: string;
-        appId: string;
-    };
+    firebase: FirebaseOptions;
 }
 
 @Injectable({
     providedIn: 'root'
 })
 export class AppSettingsService {
-    private settings$ = new BehaviorSubject<AppSettings | null>(null);
+    private loadedSettings: AppSettings | null = null;
+    private loadingPromise: Promise<void> | null = null;
 
     constructor(private http: HttpClient) {
         this.loadSettings();
     }
 
     async loadSettings(): Promise<void> {
-        try {
-            const settings = await firstValueFrom(
-                this.http.get<AppSettings>('/assets/config/app-settings.json')
-            );
-            this.settings$.next(settings);
-        } catch (error) {
-            console.error('Failed to load app settings:', error);
+        if (!this.loadingPromise) {
+            this.loadingPromise = (async () => {
+                if (this.loadedSettings) return;
+
+                try {
+                    this.loadedSettings = await firstValueFrom(
+                        this.http.get<AppSettings>('/assets/config/app-settings.json')
+                    );
+                } catch (error) {
+                    console.error('Failed to load app settings:', error);
+                    throw error;
+                }
+            })();
         }
+        return this.loadingPromise;
     }
 
     get banners() {
-        return this.settings$.value?.banners ?? {
+        return this.loadedSettings?.banners ?? {
             cacheTimeoutSeconds: 3600, // 5 hours
             dismissTimeoutSeconds: 432000, // 5 days
             dataUrl: '/assets/data/banners.json'
         };
     }
 
-    getDonationSettings(): Observable<AppSettings['donation'] | null> {
-        return this.settings$.asObservable()
-            .pipe(map(settings => settings?.donation ?? null));
+    getDonationSettings(): AppSettings['donation'] {
+        return this.loadedSettings?.donation ?? { enabled: false, paypalLink: '' };
     }
 
-    /**
-     * Get Firebase configuration object
-     * @returns Firebase configuration object or null if not available
-     */
-    getFirebaseConfig(): AppSettings['firebase'] | null {
-        return this.settings$.value?.firebase ?? null;
+    getFirebaseConfig(): FirebaseOptions {
+        return this.loadedSettings?.firebase ?? {};
     }
 }

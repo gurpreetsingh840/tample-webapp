@@ -1,10 +1,13 @@
 import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig, inject, provideAppInitializer } from '@angular/core';
+import { ApplicationConfig, ErrorHandler, inject, provideAppInitializer } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { VersionService } from './services/version.service';
 import { AppSettingsService } from './shared/services/app-settings.service';
-import { FirebaseInitializationService } from './shared/services/firebase.service';
+import { GlobalErrorHandler } from './shared/services/global-error-handler.service';
+
+import { getAnalytics } from 'firebase/analytics';
+import { FirebaseApp, initializeApp } from 'firebase/app';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,13 +17,12 @@ export const appConfig: ApplicationConfig = {
 
       // create local promise
       const appSettingsService = inject(AppSettingsService);
-      const firebaseInitService = inject(FirebaseInitializationService);
       const http = inject(HttpClient);
       const versionService = new VersionService(http);
 
       const promise = new Promise<boolean>((resolve, reject) => {
         appSettingsService.loadSettings().then(() => {
-          firebaseInitService.initializeFirebase();
+          loadFireBase(appSettingsService);
           versionService.checkVersion().finally(() => {
             resolve(true);
           });
@@ -31,7 +33,24 @@ export const appConfig: ApplicationConfig = {
       });
 
       return promise;
-    })
+    }),
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    }
   ]
 };
 
+function loadFireBase(appSettingsService: AppSettingsService) {
+  try {
+    const firebaseConfig = appSettingsService.getFirebaseConfig();
+    if (firebaseConfig.apiKey) {
+      const firebaseApp: FirebaseApp = initializeApp(firebaseConfig);
+      getAnalytics(firebaseApp);
+    }
+    // Optional: Set global analytics properties or user ID
+    // analytics.setUserId('user123');
+  } catch (error) {
+    console.error('Firebase Initialization Error:', error);
+  }
+}
