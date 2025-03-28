@@ -91,9 +91,6 @@ During local development, create `appsettings.local.json` in the `src/assets` di
     "storageBucket": "your-storage-bucket",
     "messagingSenderId": "your-messaging-sender-id",
     "appId": "your-app-id"
-  },
-  "api": {
-    "baseUrl": "http://localhost:4200"
   }
 }
 ```
