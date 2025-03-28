@@ -6,6 +6,8 @@ import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/r
 import { filter } from 'rxjs';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { AnalyticsEvent } from './shared/enums/analytics-events.enum';
+import { AnalyticsService } from './shared/services/analytics.service ';
 
 @Component({
   selector: 'app-root',
@@ -113,14 +115,24 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  constructor(private router: Router,
-    private titleService: Title
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private analytics: AnalyticsService
   ) {
     effect(() => {
-      window.localStorage.setItem('darkMode', JSON.stringify(this.darkMode()));
+      const mode = this.darkMode();
+      window.localStorage.setItem('darkMode', JSON.stringify(mode));
+      this.analytics.trackEvent(AnalyticsEvent.THEME_CHANGE, {
+        mode: mode ? 'dark' : 'light',
+        source: 'user_preference'
+      });
     });
   }
 
+  /**
+   * Get the title of the current page.
+   */
   ngOnInit() {
     // Handle navigation animations
     this.router.events.subscribe(event => {
@@ -137,21 +149,37 @@ export class AppComponent implements OnInit {
     // Handle title updates
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      const rt = this.getChild(this.router.routerState.root);
-      const title = rt?.title || 'Gurdwara Singh Sabha Richmond';
-      this.titleService.setTitle(title);
+    ).subscribe((event: NavigationEnd) => {
+      const title = this.getTitle(this.router.routerState.root);
+      const finalTitle = title ? `${title} - Gurdwara Singh Sabha Richmond` : 'Gurdwara Singh Sabha Richmond';
+      this.titleService.setTitle(finalTitle);
+      this.analytics.trackPageView(event.urlAfterRedirects, title);
     });
   }
 
-  // Helper method to get the child route
-  private getChild(route: any): any {
-    while (route.firstChild) {
-      route = route.firstChild;
+  /**
+   * Get the title of the route.
+   * @param route - The route to get the title from.
+   */
+  private getTitle(route: any): string | undefined {
+    const data = route.snapshot.data;
+    const children = route.children;
+
+    if (data?.title) {
+      return data.title;
     }
-    return route.snapshot.data;
+
+    for (const child of children) {
+      const title = this.getTitle(child);
+      if (title) return title;
+    }
+
+    return undefined;
   }
 
+  /**
+   * Toggle dark mode.
+   */
   toggleDarkMode() {
     this.darkMode.set(!this.darkMode());
   }

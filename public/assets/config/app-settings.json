@@ -7,5 +7,14 @@
         "cacheTimeoutSeconds": 18000,
         "dismissTimeoutSeconds": 432000,
         "dataUrl": "/assets/data/banners.json"
+    },
+    "firebase": {
+        "apiKey": "AIzaSyCYsCeeExRWBaTu5e9qt_oqrdHZvc__Ny4",
+        "authDomain": "tample-webapp.firebaseapp.com",
+        "projectId": "tample-webapp",
+        "storageBucket": "tample-webapp.firebasestorage.app",
+        "messagingSenderId": "1079933305594",
+        "appId": "1:1079933305594:web:125be2c3d1cc99e0083f43",
+        "measurementId": "G-GTTZJW7SP9"
     }
 }

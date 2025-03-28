@@ -73,6 +73,36 @@ npm install
 npm start
 ```
 
+## Local Configuration
+
+The application uses two configuration files:
+- `appsettings.json` - Default settings checked into source control
+- `appsettings.local.json` - Local development settings (git ignored), for security reasons
+
+### Development
+During local development, create `appsettings.local.json` in the `src/assets` directory:
+
+```json
+{
+  "firebase": {
+    "apiKey": "your-api-key",
+    "authDomain": "your-auth-domain",
+    "projectId": "your-project-id",
+    "storageBucket": "your-storage-bucket",
+    "messagingSenderId": "your-messaging-sender-id",
+    "appId": "your-app-id"
+  },
+  "api": {
+    "baseUrl": "http://localhost:4200"
+  }
+}
+```
+
+### Firebase Deployment
+When building for Firebase deployment (`npm run deploy:all`), the settings from both files will be automatically merged. The local settings will override the default settings. This only happens during the Firebase build process.
+
+For all other environments, only the relevant environment-specific settings file will be used.
+
 ### Need Help?
 - Open an issue for bugs or suggestions
 - Ask questions in the discussions section
