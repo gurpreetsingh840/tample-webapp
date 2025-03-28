@@ -4,6 +4,7 @@ import { Component, HostBinding, HostListener, OnInit, effect, signal } from '@a
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
+import { TEMPLE_NAME } from './app.routes';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { AnalyticsEvent } from './shared/enums/analytics-events.enum';
@@ -151,7 +152,7 @@ export class AppComponent implements OnInit {
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       const title = this.getTitle(this.router.routerState.root);
-      const finalTitle = title ? `${title} - Gurdwara Singh Sabha Richmond` : 'Gurdwara Singh Sabha Richmond';
+      const finalTitle = title ? `${title}` : TEMPLE_NAME;
       this.titleService.setTitle(finalTitle);
       this.analytics.trackPageView(event.urlAfterRedirects, title);
     });

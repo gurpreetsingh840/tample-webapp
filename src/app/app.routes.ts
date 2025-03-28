@@ -5,7 +5,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImageGalleryComponent } from './pages/image-gallery/image-gallery.component';
 
-const TEMPLE_NAME = 'Gurdwara Singh Sabha Richmond';
+export const TEMPLE_NAME = 'Gurdwara Singh Sabha Richmond VA';
 
 export const routes: Routes = [
   {
