@@ -45,7 +45,7 @@ function loadFireBase(appSettingsService: AppSettingsService) {
   try {
     const firebaseConfig = appSettingsService.getFirebaseConfig();
     if (firebaseConfig.apiKey) {
-      const firebaseApp: FirebaseApp = initializeApp(firebaseConfig);
+      const firebaseApp: FirebaseApp = initializeApp(firebaseConfig, appSettingsService.appName);
       getAnalytics(firebaseApp);
     }
     // Optional: Set global analytics properties or user ID

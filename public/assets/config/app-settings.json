@@ -1,4 +1,5 @@
 {
+    "appName": "temple-webapp",
     "donation": {
         "enabled": false,
         "paypalLink": "https://www.paypal.com/donate"

@@ -4,6 +4,7 @@ import { FirebaseOptions } from 'firebase/app';
 import { firstValueFrom } from 'rxjs';
 
 export interface AppSettings {
+    appName: string;
     donation: {
         enabled: boolean;
         paypalLink: string;
@@ -51,6 +52,10 @@ export class AppSettingsService {
             dismissTimeoutSeconds: 432000, // 5 days
             dataUrl: '/assets/data/banners.json'
         };
+    }
+
+    get appName(): string {
+        return this.loadedSettings?.appName ?? 'Gurdwara Singh Sabha Richmond';
     }
 
     getDonationSettings(): AppSettings['donation'] {
