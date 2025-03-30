@@ -21,7 +21,7 @@
             <div class="text-gray-300">
                 <p>{{ contactMessage }}</p>
                 <ng-container *ngIf="context !== 'contact'">
-                    <a routerLink="/contact"
+                    <a routerLink="/contact" (click)="trackContactManagement()"
                         class="text-orange-600 dark:text-orange-400 hover:underline mt-2 inline-block">
                         Contact Management →
                     </a>

@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { AnalyticsEvent } from '../../enums/analytics-events.enum';
+import { AnalyticsService } from '../../services/analytics.service ';
 import { ContactInfoService } from '../../services/contact-info.service';
 
 @Component({
@@ -38,7 +40,8 @@ import { ContactInfoService } from '../../services/contact-info.service';
         <a [href]="contactInfo.getMapsUrl()"
            target="_blank"
            rel="noopener noreferrer"
-           [class]="directionsClass">
+           [class]="directionsClass"
+           (click)="trackDirections()">
           <i class="fa-solid fa-location-dot w-6 text-center mr-2"></i>
           Get Directions
         </a>
@@ -56,5 +59,12 @@ export class ContactInfoComponent {
   @Input() directionsClass =
     'inline-flex items-center text-orange-500 hover:text-orange-400 transition-colors duration-200';
 
-  constructor(public contactInfo: ContactInfoService) {}
+  constructor(
+    public contactInfo: ContactInfoService,
+    private analytics: AnalyticsService
+  ) { }
+
+  trackDirections() {
+    this.analytics.trackEvent(AnalyticsEvent.GET_DIRECTIONS, {});
+  }
 }

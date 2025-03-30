@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AnalyticsEvent } from '../../enums/analytics-events.enum';
 import { DonationSettings } from '../../models/app-settings.model';
+import { AnalyticsService } from '../../services/analytics.service ';
 import { AppSettingsService } from '../../services/app-settings.service';
 
 @Component({
@@ -33,7 +35,7 @@ export class DonationButtonComponent {
 
     contactMessage = "For donations and contributions, please contact our management team. We'll be happy to assist you with the process.";
 
-    constructor(private appSettings: AppSettingsService) {
+    constructor(private appSettings: AppSettingsService, private analytics: AnalyticsService) {
         this.donationSettings = this.appSettings.getDonationSettings();
     }
 
@@ -43,5 +45,14 @@ export class DonationButtonComponent {
 
     openDonationLink(paypalLink: string): void {
         window.open(paypalLink, '_blank');
+    }
+
+    /**
+     * * Track the donation button click event for analytics.
+     */
+    trackContactManagement(): void {
+        this.analytics.trackEvent(AnalyticsEvent.CONTACT_MANAGEMENT, {
+            category: 'Donation'
+        });
     }
 }
