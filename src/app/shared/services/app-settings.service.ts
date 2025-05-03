@@ -14,6 +14,9 @@ export interface AppSettings {
         dataUrl: string;
     };
     firebase: FirebaseOptions;
+    socialLinks: {
+        [key: string]: string;
+    };
 }
 
 @Injectable({
@@ -50,6 +53,19 @@ export class AppSettingsService {
             cacheTimeoutSeconds: 3600, // 5 hours
             dismissTimeoutSeconds: 432000, // 5 days
             dataUrl: '/assets/data/banners.json'
+        };
+    }
+
+    get(key: keyof AppSettings): any {
+        return this.loadedSettings?.[key];
+    }
+
+    get settings(): AppSettings {
+        return this.loadedSettings ?? {
+            donation: { enabled: false, paypalLink: '' },
+            banners: { cacheTimeoutSeconds: 0, dismissTimeoutSeconds: 0, dataUrl: '' },
+            firebase: {},
+            socialLinks: {}
         };
     }
 

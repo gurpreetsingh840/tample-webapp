@@ -41,15 +41,18 @@
       </div>
     </div>
 
-    <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-      <p>&copy; {{ currentYear }} Gurdwara Singh Sabha Richmond VA. All rights reserved.</p>
-      <div class="mt-4">
-        <a href="https://github.com/gurpreetsingh840/temple-webapp" target="_blank" rel="noopener noreferrer"
-          (click)="trackGitHubClick()"
-          class="inline-flex items-center text-gray-400 hover:text-white transition-colors duration-200">
-          <i class="fab fa-github text-xl mr-2"></i>
-          View on GitHub
-        </a>
+    <div class="border-t border-gray-800 mt-12 pt-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="text-center md:text-left">
+            <p class="text-gray-400">&copy; {{ currentYear }} Gurdwara Singh Sabha Richmond VA. All rights reserved.</p>
+          </div>
+          <div class="text-center md:text-right">
+            <div class="flex justify-center md:justify-end space-x-6 mt-4">
+              <app-social-links location="footer"></app-social-links>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

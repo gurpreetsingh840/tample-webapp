@@ -1,0 +1,7 @@
+.fab {
+  transition: color 0.2s ease-in-out;
+}
+
+i {
+  cursor: pointer;
+}
