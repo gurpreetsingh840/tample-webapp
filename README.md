@@ -1,6 +1,6 @@
-# Gurdwara Singh Sabha Website
+# Gurudwara Singh Sabha Website
 
-A modern, responsive website for Gurdwara Singh Sabha built with Angular and TailwindCSS.
+A modern, responsive website for Gurudwara Singh Sabha built with Angular and TailwindCSS.
 
 ## Features
 - Responsive design with mobile-first approach
@@ -11,7 +11,7 @@ A modern, responsive website for Gurdwara Singh Sabha built with Angular and Tai
 - Modern UI with smooth animations
 
 ## Tech Stack
-- Angular 17
+- Angular 19
 - TailwindCSS
 - Material Icons
 - Font Awesome
@@ -40,7 +40,7 @@ ng build
 Visit: https://ricgurudwara.org/
 
 ## Contributing
-We welcome contributions to improve this Gurdwara website template! Here's how you can help:
+We welcome contributions to improve this Gurudwara website template! Here's how you can help:
 
 ### Getting Started
 1. Fork the repository
